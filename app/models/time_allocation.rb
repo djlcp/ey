@@ -1,0 +1,2 @@
+class TimeAllocation < ApplicationRecord
+end
