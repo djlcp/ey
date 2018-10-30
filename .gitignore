@@ -31,5 +31,3 @@
 /config/master.key
 
 /config/secrets.yml
-
-.DS_Store
