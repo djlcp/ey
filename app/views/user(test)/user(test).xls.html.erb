@@ -1,0 +1,27 @@
+xls template
+
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>first_name</th>
+		<th>last_name</th>
+		<th>leave_from_date</th>
+		<th>leave_to_date</th>
+		<th>leave_type</th>
+	</tr>
+
+	<% @users.each do |users| %>
+	<tr>
+		<td><%= user.id %></td>
+		<td><%= user.first_name %></td>
+		<td><%= user.last_name %></td>
+		<td><%= user.leave_from_date %></td>
+		<td><%= user.leave_to_date %></td>
+		<td><%= user.leave_type %></td>
+
+	</tr>
+
+	<%end %>
+	
+</table>
+
