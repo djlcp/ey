@@ -58,14 +58,8 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-<<<<<<< HEAD
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-#devise
 gem 'devise'
-=======
 gem 'momentjs-rails'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
->>>>>>> fe09b9fc0cd59a292f58bcff3aaafc1c5c9398a0

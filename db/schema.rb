@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_10_25_184738) do
-=======
-ActiveRecord::Schema.define(version: 2018_10_24_192838) do
->>>>>>> fe09b9fc0cd59a292f58bcff3aaafc1c5c9398a0
 
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "description"
@@ -34,7 +30,6 @@ ActiveRecord::Schema.define(version: 2018_10_24_192838) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-<<<<<<< HEAD
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name"
@@ -43,7 +38,5 @@ ActiveRecord::Schema.define(version: 2018_10_24_192838) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-=======
->>>>>>> fe09b9fc0cd59a292f58bcff3aaafc1c5c9398a0
 
 end

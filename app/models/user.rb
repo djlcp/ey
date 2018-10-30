@@ -2,15 +2,10 @@
 ## need to test this!! Needs a users data set before this will work ##
 
 class User < ApplicationRecord
-<<<<<<< HEAD
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-=======
-	acts_as_paranoid
-	# Include default devise modules. 
-	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :tracka
 
 	validates :email, presence: true
 
@@ -40,5 +35,4 @@ class User < ApplicationRecord
 			end
 		end
 	end
->>>>>>> fe09b9fc0cd59a292f58bcff3aaafc1c5c9398a0
 end
