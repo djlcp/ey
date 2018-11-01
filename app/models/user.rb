@@ -1,10 +1,12 @@
 ## users model created by Richard 30.10.18 as a test for csv output ##
 ## need to test this!! Needs a users data set before this will work ##
 
+# Best approach: use a format csv handler
+
 class User < ApplicationRecord
-	acts_as_paranoid
+	# acts_as_paranoid
 	# Include default devise modules. 
-	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :tracka
+	# devise :database_authenticatable, :registerable, :recoverable, :rememberable, :tracka
 
 	validates :email, presence: true
 
