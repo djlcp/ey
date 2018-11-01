@@ -19,6 +19,12 @@
   </head>
 
   <body>
+    <header>
+      <h2> Ey Time </h2>
+      <h3><%= link_to 'Log in', user_session_path %></h3>
+    </header>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
