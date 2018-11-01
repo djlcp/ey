@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/tmp/cache/*
 !/log/.keep
 !/tmp/.keep
 
@@ -29,5 +30,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
+/config/database.yml
 /config/secrets.yml

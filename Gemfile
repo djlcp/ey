@@ -58,6 +58,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'devise'
 gem 'momentjs-rails'
 
 gem 'jquery-rails'

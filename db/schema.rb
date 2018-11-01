@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_184738) do
-
+ActiveRecord::Schema.define(version: 2018_10_30_191817) do
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "description"
     t.string "leave_type"
@@ -21,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_184738) do
     t.datetime "updated_at", null: false
     t.boolean "manager_approval"
     t.boolean "counsellor_approval"
+    t.boolean "approved_both"
   end
 
   create_table "time_allocations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,17 +35,21 @@ ActiveRecord::Schema.define(version: 2018_10_25_184738) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
-    t.string "email"
+    t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "requested_approvals_sent", options "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    # each of the items in this database corresponds to an email
     # foreign key to request 
-    # token for button
-    # boolean flag approved (man and counc)
-
-
-
+    # datetime
+    # userid for who updated it
+    # role from userid
+    # boolean flag approved 
 end
