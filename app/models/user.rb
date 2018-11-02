@@ -4,16 +4,13 @@
 # Best approach: use a format csv handler
 
 class User < ApplicationRecord
-<<<<<<< HEAD
 	# acts_as_paranoid
 	# Include default devise modules. 
 	# devise :database_authenticatable, :registerable, :recoverable, :rememberable, :tracka
-=======
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
->>>>>>> 0bf88cf111491a696dbedc47fda258d75c35d479
 
 	validates :email, presence: true
 
