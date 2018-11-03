@@ -31,3 +31,5 @@
 /config/master.key
 /config/database.yml
 /config/secrets.yml
+
+/config/database.yml
