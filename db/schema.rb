@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_191817) do
     t.boolean "manager_approval"
     t.boolean "counsellor_approval"
     t.boolean "approved_both"
+    t.boolean "revoked"
   end
 
   create_table "time_allocations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

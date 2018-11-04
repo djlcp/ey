@@ -44,7 +44,7 @@ end
 	respond_to do |format|
 		if @request.save
 			# Tell mailer to send requests to both manager and counsellor
-			UserMailer.with(user: @user.counsellor, @user.manager).leave_request_cm_email
+			UserMailer.with(user: @request.user.counsellor, @request.user.manager).leave_request_cm_email
 			format.html { redirect_to(@user, notice: "Leave Request Submitted")}
 			format.json { render json: @user.request, status: :created }
 		else
@@ -57,7 +57,7 @@ end
 	respond_to do |format|
 		if @request.counsellor_approval = true
 			and @request.manager_approval = true 
-			UserMailer.with(user: @user).leave_approved_email
+			UserMailer.with(user: @request.user).leave_approved_email
 			format.html { redirect_to(@user, notice "Leave Request Approved")}
 			format.json { render json: @request, status: :approved}
 		else
@@ -69,13 +69,27 @@ end
 	respond_to do |format|
 		if @request.counsellor_approval = false
 			or @request.manager_approval = false
-			UserMailer.with(user: @user).leave_denied_email
+			UserMailer.with(user: @request.user).leave_denied_email
 			format.html { redirect_to(@user, notice "Leave Request Denied")}
 			format.json { render json: @request, status: :denied}
 		else
 			format.html { render action: 'new' }
 			format.json { render json: @request.errors, status: :denial_not_sent }
 		end
+
+# When a request.revoked = true, then send revoke emails to manager, counsellor and confirm with user
+	respond_to do |format|
+		if @request.revoked = true
+			UserMailer.with(user: @request.user).leave_revoked_email
+			UserMailer.with(user: @request.user.counsellor).leave_revoked_email_4cm
+			UserMailer.with(user: @request.user.manager).leave_revoked_email_4cm
+			format.html { redirect_to(@user, notice "Leave Request Revoked")}
+			format.json { render json: @request, status: :denied}
+		else
+			format.html { render action: 'new' }
+			format.json { render json: @request.errors, status: :denial_not_sent }
+		end
+
 
 
 # When a user requests a new password

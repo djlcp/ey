@@ -10,8 +10,7 @@ class UserNotifierMailer < ApplicationMailer
 
  #  recreate one for each email, then create content in corresponding .html.erb file
  # run mailcatcher to test
-
- # HOW DO I REFER TO A 'USER' WHEN THIS IS NOT SO CLEARLY DEFINED?????????
+ # Check: how to call mailers? request.user? 
 
  def send_changed_password_email(user)
     @user = user
@@ -21,29 +20,49 @@ class UserNotifierMailer < ApplicationMailer
 
 def leave_denied_email(user)
     @user = user
-    mail( :to => @user.email,
+    mail( :to => @request.user.email,
     :subject => 'Your leave request has been denied' )
   end
 
 def leave_approved_email(user)
     @user = user
-    mail( :to => @user.email,
+    mail( :to => @request.user.email,
     :subject => 'Your leave request has been approved' )
   end
 
   def leave_revoked_email(user)
     @user = user
-    mail( :to => @user.email,
+    mail( :to => @request.user.email,
     :subject => 'You have successfully revoked your leave request' )
   end
 
-# THIS ONE NEEDS TO GO TO A MANAGER OR COUNCELLOR
-  def leave_request_cm_email(user)
+# inform counsellor of leave revoked
+  def leave_revoked_email_4cm(request.user.counsellor)
     @user = user
-    mail( :to => @user.email,
+    mail( :to => @request.user.counsellor.email,
+    :subject => 'User has revoked leave request' )
+  end
+
+# inform manager of leave revoked
+def leave_revoked_email_4cm(request.user.manager)
+    @user = user
+    mail( :to => @request.user.manager.email,
+    :subject => 'User has revoked leave request' )
+  end
+
+# THIS ONE NEEDS TO GO TO A USER"S COUNCELLOR
+  def leave_request_cm_email(user.counsellor)
+    @user = user
+    mail( :to => @request.user.counsellor.email,
     :subject => 'New leave request(s)' )
   end
 
+ # THIS ONE NEEDS TO GO TO A USER"S COUNCELLOR
+  def leave_request_cm_email(user.manager)
+    @user = user
+    mail( :to => @request.user.manager.email,
+    :subject => 'New leave request(s)' )
+  end
 
 
 
