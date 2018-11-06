@@ -20,6 +20,7 @@ CREATE TABLE `ar_internal_metadata` (
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `leave_app_logs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -35,6 +36,8 @@ CREATE TABLE `leave_app_logs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+=======
+>>>>>>> ae9f8c09faf8ac649ede72cf81167ab9767620a0
 DROP TABLE IF EXISTS `requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -45,8 +48,12 @@ CREATE TABLE `requests` (
   `end` date DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
+<<<<<<< HEAD
   `manager_approval` tinyint(1) DEFAULT NULL,
   `counsellor_approval` tinyint(1) DEFAULT NULL,
+=======
+  `approval` tinyint(1) DEFAULT NULL,
+>>>>>>> ae9f8c09faf8ac649ede72cf81167ab9767620a0
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -89,7 +96,11 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+>>>>>>> ae9f8c09faf8ac649ede72cf81167ab9767620a0
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -108,6 +119,12 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181024192838'),
 ('20181025184738'),
 ('20181030191817'),
+<<<<<<< HEAD
 ('20181106181708');
+=======
+('20181101221053'),
+('20181101221431'),
+('20181101222332');
+>>>>>>> ae9f8c09faf8ac649ede72cf81167ab9767620a0
 
 
