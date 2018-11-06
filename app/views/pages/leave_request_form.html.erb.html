@@ -1,0 +1,21 @@
+<%= simple_form_for @user, url: examples_vertical_path,
+  wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch
+  } do |f| %>
+
+  <%= f.error_notification %>
+
+  <!--  NEEDS TO BE AUTO-AUTHENTICATED <%= f.input :name %> -->
+
+  <%= f.input :from_date %>
+
+  <%= f.input :to_date %>
+
+  <%= f.input :leave_type, as: :radio_buttons,
+    collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
+
+  <%= f.button :submit for approval %>
+<% end %>
