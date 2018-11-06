@@ -1,0 +1,119 @@
+
+.row
+  .col-sm-6.offset-sm-3
+    h1.display-3.text-xs-center New Post!
+
+    = vertical_form(model.contract, url) do |f|
+      .row
+        .col-sm-6
+          = f.input_group :title, label: "Title" do |input|
+            =input.group_addon('<input type="checkbox" value="1"/>')
+            =input.control
+        .col-sm-6
+          = f.input :url_slug, label: "URL Slug"
+
+      = f.input_group :url_slug, label: "URL", left_addon: 'http://', right_addon: '.com'
+
+      = f.select :select_roles, label: "Roles", collection: roles_array
+
+      = f.inline_radio :select_roles, label: "Inline radios", collection: [[1, "Yes"], [2, "No"], [3, "I really don't know"]]
+
+      = f.inline_checkbox :select_roles, label: "Inline checkboxes", collection: options_array
+
+      = f.input :content, type: 'file', label: "File"
+
+
+      hr
+      h4 Checkboxes in columns!
+      .row
+        .col-sm-4
+          = f.checkbox :select_roles, label: "Column 1", collection: options_array
+        .col-sm-4
+          = f.checkbox :select_roles, label: "Column 2", collection: options_array
+        .col-sm-4
+          = f.checkbox :select_roles, label: "Column 3", collection: options_array
+      hr
+
+      = f.textarea :content, placeholder: "And your story...", rows: 9
+
+      = f.checkbox :is_public, label: "Public?", value: "1"
+
+      hr
+      h4 Custom Controls
+
+      = f.custom_file :content, label: 'Custom File'
+
+      = f.custom_select :select_roles, label: "Custom Select", collection: roles_array
+
+      = f.custom_radio :select_roles, label: "Custom Inline radios", collection: options_array
+
+      = f.custom_checkbox :select_roles, label: "Custom Inline checkbox", collection: options_array
+
+      = f.custom_stacked_radio :select_roles, label: "Custom Stacked radios", collection: options_array
+
+      = f.custom_stacked_checkbox :select_roles, label: "Custom Stacked checkbox", collection: options_array
+
+      = f.submit content: "Submit!", class: ['btn-lg']
+
+hr
+.row
+  .col-sm-6.offset-sm-3
+    h1.display-3.text-xs-center Inline Form
+
+    = inline_form(model.contract, url) do |f|
+      = f.input :title
+      = f.input :url_slug, label: 'url slug', placeholder: "URL slug", label_options: { class: ["sr-only"] }
+      =f.submit(content: "Submit!")
+
+    hr
+
+    = inline_form(model.contract, url) do |f|
+      = f.custom_file :content, label: 'Attachment'
+      =f.submit(content: "Submit!")
+
+hr
+.row
+  h1.display-3.text-xs-center Horizontal Form
+
+  = horizontal_form(model.contract, url) do |f|
+    = f.input_group :title, label: "Title" do |input|
+      =input.control
+      =input.group_btn("<a class='btn btn-secondary' href='#'>Suprise Me</a>")
+
+    = f.input :url_slug, label: 'URL'
+
+    = f.textarea :content, label: 'Content', placeholder: "And your story...", rows: 9
+
+    = f.inline_checkbox :select_roles, label: "Inline checkboxes", collection: options_array
+
+    = f.radio :select_roles, label: "Stacked radios", collection: options_array
+
+    = f.select :select_roles, label: 'Role', collection: roles_array
+
+    = f.custom_file :content, label: 'Custom File'
+
+    = f.custom_select :select_roles, label: "Custom Select", collection: roles_array
+
+    = f.custom_radio :select_roles, label: "Custom Inline radios", collection: options_array
+
+    = f.custom_checkbox :select_roles, label: "Custom Inline checkbox", collection: options_array
+
+    = f.custom_stacked_radio :select_roles, label: "Custom Stacked radios", collection: options_array
+
+    = f.custom_stacked_checkbox :select_roles, label: "Custom Stacked checkbox", collection: options_array
+
+    = f.submit content: "Submit!", class: ['btn-lg']
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
+Oops.. No translation found.
