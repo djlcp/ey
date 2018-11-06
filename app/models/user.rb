@@ -4,6 +4,7 @@
 # Best approach: use a format csv handler
 
 class User < ApplicationRecord
+	has_many :requests
 	# acts_as_paranoid
 	# Include default devise modules. 
 	# devise :database_authenticatable, :registerable, :recoverable, :rememberable, :tracka
