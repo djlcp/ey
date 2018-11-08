@@ -8963,6 +8963,7 @@ FOREIGN KEY (`user_id`)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
   ↳ bin/rails:9
+<<<<<<< HEAD
   [1m[35m (14.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 11[0m
   [1m[36mRequest Load (1.3ms)[0m  [1m[34mSELECT  `requests`.* FROM `requests` LIMIT 11[0m
@@ -25940,6 +25941,31 @@ ActionController::RoutingError (No route matches [GET] "/css/creative.min.css"):
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
 Started GET "/js/creative.min.js" for 127.0.0.1 at 2018-11-08 19:00:28 +0000
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+=======
+Started GET "/" for 127.0.0.1 at 2018-11-08 18:00:36 +0000
+  
+Mysql2::Error::ConnectionError (Access denied for user 'root'@'localhost' (using password: YES)):
+  
+mysql2 (0.5.2) lib/mysql2/client.rb:90:in `connect'
+mysql2 (0.5.2) lib/mysql2/client.rb:90:in `initialize'
+activerecord (5.2.1) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `new'
+activerecord (5.2.1) lib/active_record/connection_adapters/mysql2_adapter.rb:22:in `mysql2_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -25966,6 +25992,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
   
 ActionController::RoutingError (No route matches [GET] "/vendor/scrollreveal/scrollreveal.min.js"):
   
@@ -25999,6 +26026,29 @@ puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
   
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+=======
+Started GET "/" for 127.0.0.1 at 2018-11-08 18:02:45 +0000
+  [1m[35m (77.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (46.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -26025,9 +26075,115 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
   
 ActionController::RoutingError (No route matches [GET] "/js/creative.min.js"):
   
+=======
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rake:9
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT GET_LOCK('4376305880551127565', 0)[0m
+  ↳ bin/rake:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rake:9
+Migrating to AddDeviseToUsers (20181030191817)
+  [1m[35m (400.7ms)[0m  [1m[35mALTER TABLE `users` CHANGE `email` `email` varchar(255) DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:7
+  [1m[35m (152.4ms)[0m  [1m[35mALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:8
+  [1m[35m (144.8ms)[0m  [1m[35mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:11
+  [1m[35m (101.7ms)[0m  [1m[35mALTER TABLE `users` ADD `reset_password_sent_at` datetime[0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:12
+  [1m[35m (105.9ms)[0m  [1m[35mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:15
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:40
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20181030191817_add_devise_to_users.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::SchemaMigration Create (5.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181030191817')[0m
+  ↳ bin/rake:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+Migrating to RemoveCounsellorAprrovalFromRequests (20181101221053)
+  [1m[35m (39.6ms)[0m  [1m[35mALTER TABLE `requests` DROP COLUMN `counsellor_approval`[0m
+  ↳ db/migrate/20181101221053_remove_counsellor_aprroval_from_requests.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181101221053')[0m
+  ↳ bin/rake:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+Migrating to RemoveManagerAprrovalFromRequests (20181101221431)
+  [1m[35m (27.5ms)[0m  [1m[35mALTER TABLE `requests` DROP COLUMN `manager_approval`[0m
+  ↳ db/migrate/20181101221431_remove_manager_aprroval_from_requests.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181101221431')[0m
+  ↳ bin/rake:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+Migrating to AddApprovalToRequests (20181101222332)
+  [1m[35m (46.7ms)[0m  [1m[35mALTER TABLE `requests` ADD `approval` tinyint(1)[0m
+  ↳ db/migrate/20181101222332_add_approval_to_requests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181101222332')[0m
+  ↳ bin/rake:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+Migrating to CreateLeaveAppLogs (20181106181708)
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE `leave_app_logs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `fkey_request` varchar(255), `username` varchar(255), `role` varchar(255), `date_time` datetime, `approval` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20181106181708_create_leave_app_logs.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181106181708')[0m
+  ↳ bin/rake:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+Migrating to AddUserToRequests (20181106200609)
+  [1m[35m (46.3ms)[0m  [1m[35mALTER TABLE `requests` ADD `user_id` bigint[0m
+  ↳ db/migrate/20181106200609_add_user_to_requests.rb:3
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE  INDEX `index_requests_on_user_id`  ON `requests` (`user_id`) [0m
+  ↳ db/migrate/20181106200609_add_user_to_requests.rb:3
+  [1m[35m (23.8ms)[0m  [1m[35mALTER TABLE `requests` ADD CONSTRAINT `fk_rails_8ead8b1e6b`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  ↳ db/migrate/20181106200609_add_user_to_requests.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181106200609')[0m
+  ↳ bin/rake:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+  [1m[36mActiveRecord::InternalMetadata Load (10.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rake:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rake:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rake:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('4376305880551127565')[0m
+  ↳ bin/rake:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rake:9
+Started GET "/" for 127.0.0.1 at 2018-11-08 18:05:50 +0000
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1062ms (Views: 1046.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vendor/bootstrap/css/bootstrap.min.css" for 127.0.0.1 at 2018-11-08 18:05:51 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/css/bootstrap.min.css"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26056,6 +26212,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26084,6 +26241,10 @@ puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
 Started GET "/vendor/fontawesome-free/css/all.min.css" for 127.0.0.1 at 2018-11-08 19:00:28 +0000
+=======
+Started GET "/vendor/fontawesome-free/css/all.min.css" for 127.0.0.1 at 2018-11-08 18:05:52 +0000
+Started GET "/vendor/magnific-popup/magnific-popup.css" for 127.0.0.1 at 2018-11-08 18:05:52 +0000
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 ActionController::RoutingError (No route matches [GET] "/vendor/fontawesome-free/css/all.min.css"):
   
@@ -26114,9 +26275,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/magnific-popup/magnific-popup.css" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/magnific-popup.css"):
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/magnific-popup.css"):
+Started GET "/css/creative.min.css" for 127.0.0.1 at 2018-11-08 18:05:52 +0000
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26145,7 +26312,10 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/css/creative.min.css" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
+=======
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 ActionController::RoutingError (No route matches [GET] "/css/creative.min.css"):
   
@@ -26176,7 +26346,11 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
+=======
+Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2018-11-08 18:05:52 +0000
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
   
@@ -26207,10 +26381,24 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
   
+=======
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2018-11-08 18:05:54 +0000
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2018-11-08 18:05:54 +0000
+Started GET "/vendor/scrollreveal/scrollreveal.min.js" for 127.0.0.1 at 2018-11-08 18:05:54 +0000
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/scrollreveal/scrollreveal.min.js"):
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+  
+  
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26238,10 +26426,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
   
+=======
+  
+Started GET "/js/creative.min.js" for 127.0.0.1 at 2018-11-08 18:05:54 +0000
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26269,10 +26462,13 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/scrollreveal/scrollreveal.min.js" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/scrollreveal/scrollreveal.min.js"):
   
+=======
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26300,9 +26496,14 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/magnific-popup/jquery.magnific-popup.min.js" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/js/creative.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26331,9 +26532,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/js/creative.min.js" for 127.0.0.1 at 2018-11-08 19:00:29 +0000
   
 ActionController::RoutingError (No route matches [GET] "/js/creative.min.js"):
+=======
+Started GET "/vendor/bootstrap/css/bootstrap.min.css" for 127.0.0.1 at 2018-11-08 18:05:54 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/css/bootstrap.min.css"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26362,6 +26569,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-08 19:00:38 +0000
 Processing by Devise::SessionsController#new as HTML
   Rendering devise/sessions/new.html.erb within layouts/application
@@ -26418,6 +26626,11 @@ ActionController::RoutingError (No route matches [GET] "/css/creative.min.css"):
 ActionController::RoutingError (No route matches [GET] "/vendor/fontawesome-free/css/all.min.css"):
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
   
+=======
+Started GET "/vendor/magnific-popup/jquery.magnific-popup.min.js" for 127.0.0.1 at 2018-11-08 18:05:56 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26446,8 +26659,14 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
   
   
+=======
+Started GET "/vendor/fontawesome-free/css/all.min.css" for 127.0.0.1 at 2018-11-08 18:05:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/fontawesome-free/css/all.min.css"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26476,8 +26695,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/magnific-popup.css"):
+=======
+Started GET "/vendor/magnific-popup/magnific-popup.css" for 127.0.0.1 at 2018-11-08 18:05:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/magnific-popup.css"):
+  
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26505,6 +26731,12 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
+Started GET "/css/creative.min.css" for 127.0.0.1 at 2018-11-08 18:05:58 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/css/creative.min.css"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26533,6 +26765,12 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
+Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2018-11-08 18:05:58 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26561,9 +26799,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2018-11-08 19:02:11 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+=======
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2018-11-08 18:05:59 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26592,12 +26836,18 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/bootstrap/css/bootstrap.min.css" for 127.0.0.1 at 2018-11-08 19:02:11 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/css/bootstrap.min.css"):
 Started GET "/vendor/scrollreveal/scrollreveal.min.js" for 127.0.0.1 at 2018-11-08 19:02:11 +0000
 Started GET "/js/creative.min.js" for 127.0.0.1 at 2018-11-08 19:02:11 +0000
 Started GET "/vendor/magnific-popup/jquery.magnific-popup.min.js" for 127.0.0.1 at 2018-11-08 19:02:11 +0000
+=======
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2018-11-08 18:05:59 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26626,6 +26876,10 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
+Started GET "/vendor/scrollreveal/scrollreveal.min.js" for 127.0.0.1 at 2018-11-08 18:06:00 +0000
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 ActionController::RoutingError (No route matches [GET] "/vendor/scrollreveal/scrollreveal.min.js"):
   
@@ -26656,12 +26910,19 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
   
 ActionController::RoutingError (No route matches [GET] "/js/creative.min.js"):
   
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
   
   
+=======
+Started GET "/vendor/magnific-popup/jquery.magnific-popup.min.js" for 127.0.0.1 at 2018-11-08 18:06:00 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
+  
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26689,6 +26950,13 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
+Started GET "/js/creative.min.js" for 127.0.0.1 at 2018-11-08 18:06:01 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/creative.min.js"):
+  
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26716,9 +26984,27 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/fontawesome-free/css/all.min.css" for 127.0.0.1 at 2018-11-08 19:02:11 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/fontawesome-free/css/all.min.css"):
+=======
+Started GET "/" for 127.0.0.1 at 2018-11-08 18:44:37 +0000
+  [1m[35m (5.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 408ms (Views: 393.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vendor/bootstrap/css/bootstrap.min.css" for 127.0.0.1 at 2018-11-08 18:44:38 +0000
+Started GET "/vendor/fontawesome-free/css/all.min.css" for 127.0.0.1 at 2018-11-08 18:44:38 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/css/bootstrap.min.css"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26747,9 +27033,16 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/magnific-popup/magnific-popup.css" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/magnific-popup.css"):
+=======
+Started GET "/css/creative.min.css" for 127.0.0.1 at 2018-11-08 18:44:38 +0000
+Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2018-11-08 18:44:38 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26778,10 +27071,23 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/css/creative.min.css" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/css/creative.min.css"):
   
+=======
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (56.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/Bill/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/css/creative.min.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/fontawesome-free/css/all.min.css"):
+  
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26809,10 +27115,13 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/jquery/jquery.min.js" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery/jquery.min.js"):
   
+=======
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26840,7 +27149,11 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
+=======
+Started GET "/vendor/bootstrap/js/bootstrap.bundle.min.js" for 127.0.0.1 at 2018-11-08 18:44:39 +0000
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 ActionController::RoutingError (No route matches [GET] "/vendor/bootstrap/js/bootstrap.bundle.min.js"):
   
@@ -26871,9 +27184,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+=======
+Started GET "/vendor/magnific-popup/magnific-popup.css" for 127.0.0.1 at 2018-11-08 18:44:39 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/magnific-popup.css"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26902,9 +27221,15 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/scrollreveal/scrollreveal.min.js" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/scrollreveal/scrollreveal.min.js"):
+=======
+Started GET "/vendor/jquery-easing/jquery.easing.min.js" for 127.0.0.1 at 2018-11-08 18:44:40 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/jquery-easing/jquery.easing.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -26933,10 +27258,20 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/vendor/magnific-popup/jquery.magnific-popup.min.js" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
   
+=======
+Started GET "/vendor/magnific-popup/jquery.magnific-popup.min.js" for 127.0.0.1 at 2018-11-08 18:44:40 +0000
+Started GET "/vendor/scrollreveal/scrollreveal.min.js" for 127.0.0.1 at 2018-11-08 18:44:40 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/scrollreveal/scrollreveal.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/magnific-popup/jquery.magnific-popup.min.js"):
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -26964,9 +27299,12 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/js/creative.min.js" for 127.0.0.1 at 2018-11-08 19:02:12 +0000
   
 ActionController::RoutingError (No route matches [GET] "/js/creative.min.js"):
+=======
+>>>>>>> 20676bfbdf63692cfdfb136cfea1b5e6d7fdfafc
   
 actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
