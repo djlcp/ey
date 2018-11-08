@@ -10,7 +10,7 @@ class UserNotifierMailer < ApplicationMailer
 
  #  recreate one for each email, then create content in corresponding .html.erb file
  # run mailcatcher to test
- # Check: how to call mailers? request.user? 
+ # Check: how to call mailers? request.user?
 
  def send_changed_password_email(user)
     @user = user
@@ -37,7 +37,7 @@ def leave_approved_email(user)
   end
 
 # inform counsellor of leave revoked
-  def leave_revoked_email_4cm(request.user.counsellor)
+  def leave_revoked_email_4cm(request, user, counsellor)
     @user = user
     mail( :to => @request.user.counsellor.email,
     :subject => 'User has revoked leave request' )
@@ -63,8 +63,4 @@ def leave_revoked_email_4cm(request.user.manager)
     mail( :to => @request.user.manager.email,
     :subject => 'New leave request(s)' )
   end
-
-
-
-
 end
