@@ -17,5 +17,3 @@
 //= require jquery_ujs
 //= require moment
 //= require_tree .
-
-require './vendor/fullcalendar'
