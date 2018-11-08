@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -19,21 +18,40 @@
   </head>
 
   <body>
-    <header>
-      <h2> Ey Time </h2>
-      <%- if user_signed_in? %>
-          <p>Welcome <strong><%= current_user.first_name %></strong></p>
-          <p>Your latest leave requests:</p>
-          <% current_user.requests.each do |request| %>
-              <p> <%= request.description %>: <%= request.start %> - <%= request.end %> </p>
-            <% end %>
-          <%= link_to "Profile", edit_user_registration_path %>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-          <% else %>
-          <%= link_to 'Log in', user_session_path %>
-        <% end %>
-    </header>
-    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">EY - Time Manager</a>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Quick Calendar</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#about">Profile</a>
+                </li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Leave</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
 
     <p class="notice"><%= notice %></p>
