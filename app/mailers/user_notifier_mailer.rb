@@ -44,21 +44,21 @@ def leave_approved_email(user)
   end
 
 # inform manager of leave revoked
-def leave_revoked_email_4cm(request.user.manager)
+def leave_revoked_email_4cm(request, user, manager)
     @user = user
     mail( :to => @request.user.manager.email,
     :subject => 'User has revoked leave request' )
   end
 
 # THIS ONE NEEDS TO GO TO A USER"S COUNCELLOR
-  def leave_request_cm_email(user.counsellor)
+  def leave_request_cm_email(user, counsellor)
     @user = user
     mail( :to => @request.user.counsellor.email,
     :subject => 'New leave request(s)' )
   end
 
  # THIS ONE NEEDS TO GO TO A USER"S COUNCELLOR
-  def leave_request_cm_email(user.manager)
+  def leave_request_cm_email(user, manager)
     @user = user
     mail( :to => @request.user.manager.email,
     :subject => 'New leave request(s)' )
