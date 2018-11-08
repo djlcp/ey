@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2018_10_30_191817) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.boolean "is_admin"
+    t.boolean "is_approver"
   end
 
   create_table "requested_approvals_sent", options "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

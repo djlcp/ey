@@ -2,7 +2,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -11,7 +11,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 DROP TABLE IF EXISTS `ar_internal_metadata`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `ar_internal_metadata` (
   `key` varchar(255) NOT NULL,
   `value` varchar(255) DEFAULT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `ar_internal_metadata` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `leave_app_logs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `leave_app_logs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `fkey_request` varchar(255) DEFAULT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `leave_app_logs` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `requests` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `requests` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) NOT NULL,
   PRIMARY KEY (`version`)
@@ -62,7 +62,7 @@ CREATE TABLE `schema_migrations` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `time_allocations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `time_allocations` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -72,11 +72,11 @@ CREATE TABLE `time_allocations` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `last_name` varchar(255) DEFAULT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -114,7 +114,6 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181101221431'),
 ('20181101222332'),
 ('20181106181708'),
-('20181106195927'),
 ('20181106200609');
 
 
