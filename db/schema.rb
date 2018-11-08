@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_191817) do
+ActiveRecord::Schema.define(version: 2018_11_06_200609) do
+
+  create_table "leave_app_logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "fkey_request"
+    t.string "username"
+    t.string "role"
+    t.datetime "date_time"
+    t.boolean "approval"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "description"
-    t.string "leave_type"
     t.date "start"
     t.date "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "manager_approval"
-    t.boolean "counsellor_approval"
-    t.boolean "approved_both"
-    t.boolean "revoked"
+    t.boolean "approval"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "time_allocations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,10 +56,5 @@ ActiveRecord::Schema.define(version: 2018_10_30_191817) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "requested_approvals_sent", options "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    # foreign key to request 
-    # datetime
-    # userid for who updated it
-    # role from userid
-    # boolean flag approved 
+  add_foreign_key "requests", "users"
 end
