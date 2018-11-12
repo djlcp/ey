@@ -63,6 +63,7 @@ group :test do
 end
 
 gem 'devise'
+gem 'devise_invitable'
 gem 'momentjs-rails'
 
 gem 'jquery-rails'
