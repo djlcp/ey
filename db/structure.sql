@@ -20,6 +20,21 @@ CREATE TABLE `ar_internal_metadata` (
   PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `leave_app_logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `leave_app_logs` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `fkey_request` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `date_time` datetime DEFAULT NULL,
+  `approval` tinyint(1) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -30,9 +45,11 @@ CREATE TABLE `requests` (
   `end` date DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `manager_approval` tinyint(1) DEFAULT NULL,
-  `counsellor_approval` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `approval` tinyint(1) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_requests_on_user_id` (`user_id`),
+  CONSTRAINT `fk_rails_8ead8b1e6b` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
@@ -93,5 +110,12 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181024192838'),
 ('20181025184738'),
 ('20181030191817');
+('20181030191817'),
+('20181101221053'),
+('20181101221431'),
+('20181101222332'),
+('20181106181708'),
+('20181106200609'),
+('20181108184655');
 
 

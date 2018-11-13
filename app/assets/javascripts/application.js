@@ -18,4 +18,3 @@
 //= require moment
 //= require_tree .
 
-require './vendor/fullcalendar'

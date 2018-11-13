@@ -1,7 +1,13 @@
 ## users model created by Richard 30.10.18 as a test for csv output ##
 ## need to test this!! Needs a users data set before this will work ##
 
+# Best approach: use a format csv handler
+
 class User < ApplicationRecord
+	has_many :requests
+	# acts_as_paranoid
+	# Include default devise modules. 
+	# devise :database_authenticatable, :registerable, :recoverable, :rememberable, :tracka
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

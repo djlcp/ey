@@ -1,0 +1,2 @@
+class LeaveAppLog < ApplicationRecord
+end
