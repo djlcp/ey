@@ -91,7 +91,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -108,12 +108,12 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181024191638'),
 ('20181024192348'),
 ('20181024192838'),
-('20181025184738'),
 ('20181030191817'),
 ('20181101221053'),
 ('20181101221431'),
 ('20181101222332'),
 ('20181106181708'),
-('20181106200609');
+('20181106200609'),
+('20181108184655');
 
 
