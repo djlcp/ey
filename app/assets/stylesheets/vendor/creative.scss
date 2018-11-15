@@ -144,7 +144,7 @@
    #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
      color: #ccc;
    }
-   #mainNav .navbar-nav > li.nav-item > a.nav-link {
+   #mainNav .navbar-nav > li.nav-item > amasth.nav-link {
      padding: 0.5rem 1rem;
    }
    #mainNav .navbar-nav > li.nav-item > a.nav-link,
@@ -177,7 +177,7 @@
  
  header.masthead {
    padding-top: 10rem;
-   padding-bottom: calc(10rem - 56px);
+   padding-bottom: calc(10rem - 56px); 
    background-image: url("header.jpg");
    background-position: center center;
    background-size: cover;
@@ -193,7 +193,8 @@
  
  header.masthead h1 {
    font-size: 3rem;
-   opacity: 0.5;
+   opacity: 0.8;
+   text-shadow: 1px 1px #ffffff;
  
  }
  
@@ -205,7 +206,7 @@
  @media (min-width: 768px) {
    header.masthead p {
      font-size: 1.15rem;
-     opacity: 0.5;
+
    }
  }
  
@@ -215,19 +216,20 @@
      min-height: 650px;
      padding-top: 0;
      padding-bottom: 0;
-    //  opacity: 0.5;
+
    }
    header.masthead h1 {
      font-size: 3rem;
-     opacity: 0.5;
+     opacity: 0.8;
+     text-shadow: 1px 1px #ffffff;
    }
  }
  
  @media (min-width: 1200px) {
    header.masthead h1 {
      font-size: 4rem;
-     opacity: 0.5;
-     text-shadow: 2px 2px #ff0000;
+     opacity: 0.8;
+     text-shadow: 1px 1px #ffffff;
    }
  }
  
