@@ -58,3 +58,11 @@ ActiveRecord::Schema.define(version: 2018_11_06_200609) do
 
   add_foreign_key "requests", "users"
 end
+
+# NOTES: 
+# Create additional tables?
+# 1. re study leave...
+# 2. Existing employees and their leave balance:
+#     either a new column with their carry-over leave balance, or
+#     a new table with leave balances for those employees.
+#     (new employees would have a NULL balance by default)
