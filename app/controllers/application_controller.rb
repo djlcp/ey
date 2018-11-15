@@ -5,7 +5,16 @@ class ApplicationController < ActionController::Base
 
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+ private
 
+	def authenticate_inviter!
+		if user_signed_in? 
+			unless current_user.is_admin==true
+	  			redirect_to root_url, :alert => "Access Denied"
+			end
+		end
+		super
+	end
 
     protected
 
