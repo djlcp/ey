@@ -50,7 +50,7 @@ CREATE TABLE `requests` (
   PRIMARY KEY (`id`),
   KEY `index_requests_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_8ead8b1e6b` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -109,13 +109,11 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181024192348'),
 ('20181024192838'),
 ('20181025184738'),
-('20181030191817');
 ('20181030191817'),
 ('20181101221053'),
 ('20181101221431'),
 ('20181101222332'),
 ('20181106181708'),
-('20181106200609'),
-('20181108184655');
+('20181106200609');
 
 
