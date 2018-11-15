@@ -104,7 +104,7 @@ CREATE TABLE `users` (
   KEY `index_users_on_invited_by_type_and_invited_by_id` (`invited_by_type`,`invited_by_id`),
   KEY `index_users_on_invitations_count` (`invitations_count`),
   KEY `index_users_on_invited_by_id` (`invited_by_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -122,7 +122,6 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181024192348'),
 ('20181024192838'),
 ('20181025184738'),
-('20181030191817');
 ('20181030191817'),
 ('20181101221053'),
 ('20181101221431'),
@@ -130,6 +129,7 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181106181708'),
 ('20181106195927'),
 ('20181106200609'),
+('20181108184655'),
 ('20181112192309'),
 ('20181112194643');
 
