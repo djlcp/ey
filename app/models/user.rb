@@ -14,10 +14,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 	validates :email, presence: true
+	enum role: [:standard, :hr, :manager]
 
 	## below some active record assocation examples - variables not yet confirmed 
 
 	# has_many :<%DATABASE ITEM GOES HERE
+	after_initialize do
+  		if self.new_record?
+    		self.role ||= :standard
+  		end
+	end
+
 
 	def self.assign_from_row(row)
 		user = User.where(email: row[:email]).first_or_initialize
