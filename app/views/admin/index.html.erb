@@ -1,0 +1,6 @@
+<h2> Admin Panel </h2>
+
+<% @users.each do |user| %>
+	<p><%= user.first_name %> <%= user.last_name %> - <%= user.email %><p>
+	<%= link_to "show", root_path %>
+<% end %>

@@ -18,10 +18,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
 
-  def show
-  	@users = User.all
-  end
-
   def create
     @user = User.new(params[:user])
 

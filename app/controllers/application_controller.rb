@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
 	def authenticate_inviter!
 		if user_signed_in? 
-			unless current_user.is_admin==true
+			unless current_user.admin==true
 	  			redirect_to root_url, :alert => "Access Denied"
 			end
 		end
