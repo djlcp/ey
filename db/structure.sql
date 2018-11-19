@@ -96,7 +96,7 @@ CREATE TABLE `users` (
   `invited_by_type` varchar(255) DEFAULT NULL,
   `invited_by_id` bigint(20) DEFAULT NULL,
   `invitations_count` int(11) DEFAULT '0',
-  `is_admin` tinyint(1) DEFAULT '0',
+  `admin` tinyint(1) DEFAULT '0',
   `role` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
@@ -135,6 +135,7 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181112194643'),
 ('20181118210643'),
 ('20181118212331'),
-('20181118212728');
+('20181118212728'),
+('20181119185828');
 
 

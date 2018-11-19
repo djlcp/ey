@@ -1,5 +1,5 @@
-
 <h2> hello </h2>
 <% @users.each do |user| %>
 	<p><%= user.first_name %> <%= user.last_name %><p>
+	<%= link_to "show", root_path %>
 <% end %>
