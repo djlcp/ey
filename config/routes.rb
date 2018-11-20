@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # get 'admin', to: 'admin#index'
 
   namespace :hr do
-  	resources :users
+  	resources :users,  only: [:index, :show, :edit, :update]
+  	# devise_for :users
   end
 
 end

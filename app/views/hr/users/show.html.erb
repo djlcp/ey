@@ -1,3 +1,13 @@
-<p><%= @user.first_name %> <%= @user.last_name %> - <%= @user.email %><p>
-
-<%= link_to "Delete", hr_user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+<div style="padding: 0 20px;">
+	<h2>View User</h2>
+	<p><strong>Name</strong></p>
+	<p><%= @user.first_name %> <%= @user.last_name %><p>
+	<p><strong>Email</strong></p>
+	<p><%= @user.email %></p>
+	<p><strong>Role</strong></p>
+	<p><%= @user.role %></p>
+	<p><strong>Admin</strong></p>
+	<p><%= @user.admin %></p>
+	<%= link_to "Edit", edit_hr_user_path(@user) %>
+	<%= link_to "Delete", hr_user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+</div>
