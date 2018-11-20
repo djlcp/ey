@@ -60,9 +60,13 @@ ActiveRecord::Schema.define(version: 2018_11_06_200609) do
 end
 
 # NOTES: 
-# Create additional tables?
+# Create additional tables? or add columns to existing tables;
 # 1. re study leave...
-# 2. Existing employees and their leave balance:
-#     either a new column with their carry-over leave balance, or
-#     a new table with leave balances for those employees.
-#     (new employees would have a NULL balance by default)
+# 2. Users table - Existing employees and their leave balance:
+#       either a new column with their carry-over leave balance, or
+#       a new table with leave balances for those employees.
+#       (new employees would have a NULL balance by default)
+#   a. Add column for onboarding/joining date
+#   b. Add column for level/pay grade...
+# 3. Requests table - 
+#   a. type of request
