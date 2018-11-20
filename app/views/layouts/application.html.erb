@@ -47,7 +47,11 @@
               <a class="nav-link js-scroll-trigger" href="#contact">Opportunities</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Sign Out</a>
+              <!-- <a class="nav-link js-scroll-trigger" href="#contact">Sign Out</a> -->
+              <%= link_to "Sign Out", destroy_user_session_path, style: 'color: black;', class: "nav-link js-scroll-trigger", method: :delete %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Log in', user_session_path, style: 'color: black;', class: "nav-link js-scroll-trigger" %>
             </li>
           </ul>
         </div>
