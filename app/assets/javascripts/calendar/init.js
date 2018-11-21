@@ -9,41 +9,13 @@ $(document).on('turbolinks:load', function() {
   // });
   $('#calendar').fullCalendar({
       dayClick: function(date, jsEvent, view) {
-
-          var target = jsEvent.target;
-
-              var chosenDate = date.format();
-
-              console.debug(chosenDate);
-
-          if($(target).hasClass('fc-highlight'))
-          {
-
-            if($('span', this).length == 0)
-            {
-              $('span.new-request').remove();
-              $(this).append('<span class="new-request">+ Create Request</span>');
-            }
-            else
-            {
-              window.location.href = '/requests/new?date=' + chosenDate;
-            }
-          }
-    
-
-
-//          var clickDate = date.format();
-//          $('#start').val(clickDate);
-//          $('#dialog').dialog('open');
-
-      /*alert('a day has been clicked!');*/
-      },
-      events: '/requests.json',
+           alert('a day has been clicked!'); ///check dayclick
+      }, 
+     
       firstDay: 1, // week starts from Monday
       fixedWeekCount: false, //caledar will have 4,5 or 6 weeks,depending on the month
       contentHeight: 600, // display height
       Boolean, default: true, //?!! auto-resize for browser window
-
       header: {
         left: 'month,agendaWeek,agendaDay,listMonth',
         center: 'title',
@@ -53,38 +25,51 @@ $(document).on('turbolinks:load', function() {
       buttonText: {
          prevYear: new moment().year() - 1,
          nextYear: new moment().year() + 1
+      }, 
+      viewRender: function (view) {
+          var y = moment($('#calendar').fullCalendar('getDate')).year();
+          $(".fc-prevYear-button").text(y - 1);
+          $(".fc-nextYear-button").text(y + 1);
       },
       minTime: "07:00:00",
       maxTime: "19:00:00",// shows time for weeks and days
-      /*viewRender: function (view) {
-        var y = moment($('#calendar').fullCalendar('getDate')).year();
-        $(".fc-prevYear-button").text(y - 1);
-        $(".fc-nextYear-button").text(y + 1);
-      }*/
-
       weekNumbers: true, // shows week count
       eventLimit: true, // allow "more" link when too many events
       selectable: true, //will give ability to select multiple days
       selectHelper: true,
       editable: true,
+      eventLimit: true,
+      themeSystem: "jquery-ui",
+      events: '/requests.json',
+      //TESTS
+      events: [
+          {
+            title: "22 november",
+            start: "2018-11-22",
+            end: "2018-11-23",
+            allDay: true
+          },
+          {
+            title: "24 november",
+            start: "2018-11-24",
+            end: "2018-11-25 09:00",
+            allDay: false
+          },
+          {
+            title: "26 november",
+            start: "2018-11-26",
+            end: "2018-11-27 01:00",
+            allDay:false
 
-      /*select: function(start, end) {
-        $.getScript('/events/new', function() {
-          $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"))
-          date_range_picker();
-          $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
-          $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
-        });
+          }
+      ],
+      select: function (start, end, jsEvent, view) {
+          var obj = {};
+          obj.title = prompt("Title:");
+          obj.start = moment(start).format("YYYY-MM-DD");
+          obj.end = moment(end).format("YYYY-MM-DD");
+          allDay = true;
+      }
 
-        calendar.fullCalendar('unselect');
-      },*/
-
-      themeSystem: "jquery-ui"
-    });
-
-
-    $('.datepicker').datepicker({
-          dateFormat: "yy-mm-dd",
-        
     });
 });
