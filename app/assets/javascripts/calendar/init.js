@@ -39,8 +39,10 @@ $(document).on('turbolinks:load', function() {
       selectHelper: true,
       editable: true,
       eventLimit: true,
+      droppable: true, //this allows things to be dropped into the calendar
       themeSystem: "jquery-ui",
       events: '/requests.json',
+
       //TESTS
       events: [
           {
@@ -63,13 +65,16 @@ $(document).on('turbolinks:load', function() {
 
           }
       ],
-      select: function (start, end, jsEvent, view) {
-          var obj = {};
-          obj.title = prompt("Title:");
-          obj.start = moment(start).format("YYYY-MM-DD");
-          obj.end = moment(end).format("YYYY-MM-DD");
-          allDay = true;
-      }
+
+      select: function(start, end) {
+        $getScript('/requests/new', function() {
+          $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"))
+          date_range_picker();
+          $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
+          $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
+      });
+        calendar.fullCalendar('unselect');
+      },
 
     });
 });
