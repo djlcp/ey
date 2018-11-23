@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_185828) do
+ActiveRecord::Schema.define(version: 2018_11_22_183157) do
 
   create_table "leave_app_logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fkey_request"
@@ -28,8 +28,9 @@ ActiveRecord::Schema.define(version: 2018_11_19_185828) do
     t.date "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "approval"
+    t.boolean "approval", default: false
     t.bigint "user_id"
+    t.integer "leave_type"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
