@@ -13,7 +13,7 @@
 	<%= f.text_field :email %>
 	</div>
 	<%= f.label :role %>
-	<%=  f.collection_select :role, User.roles.map{ |a| [a.first,a.first] },  :first, :second %>
+	<%= f.select :role, User.roles.keys %>
 	<%= f.submit %>
 <% end %>
 </div>
