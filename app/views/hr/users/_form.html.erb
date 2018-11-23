@@ -1,7 +1,19 @@
+<div class="form-container">
 <%= form_for([:hr, @user]) do |f| %>
+	<div class="form-field">
 	<%= f.label :first_name %>
 	<%= f.text_field :first_name %>
+	</div>
+	<div class="form-field">
 	<%= f.label :last_name %>
 	<%= f.text_field :last_name %>
+	</div>
+	<div class="form-field">
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	</div>
+	<%= f.label :role %>
+	<%=  f.collection_select :role, User.roles.map{ |a| [a.first,a.first] },  :first, :second %>
 	<%= f.submit %>
 <% end %>
+</div>
