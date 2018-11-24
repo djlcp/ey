@@ -1,6 +1,24 @@
-<h2> HR Panel </h2>
-
-<% @users.each do |user| %>
-	<p><%= user.first_name %> <%= user.last_name %> - <%= user.email %><p>
-	<%= link_to "View User", hr_user_path(user) %>
-<% end %>
+<div class="container">
+  <h2>HR Panel</h2>
+  <p>User list</p>            
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to "View User", hr_user_path(user), class: 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

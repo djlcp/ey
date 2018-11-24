@@ -26,12 +26,8 @@
       collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
 
     <%= f.label :leave_type %>
-    <% Request.leave_types.keys.each do |leave_type| %>
 
-      <%= f.radio_button :leave_type, value: leave_type %>
-      <%= f.label :leave_type_id, leave_type.humanize %>
-
-    <% end %>
+    <%= f.select :leave_type, Request.leave_types.keys %>
   </div>
 
   <div class="field form-group">
