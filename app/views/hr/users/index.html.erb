@@ -1,6 +1,6 @@
 <div class="container">
   <h2>HR Panel</h2>
-  <p>User list</p>            
+  <h4>User list</h4>            
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -21,4 +21,6 @@
     <% end %>
     </tbody>
   </table>
+  <h4>Add new Users</h4>
+  <%= link_to 'new user', new_user_invitation_path, class: 'btn btn-primary' %>
 </div>
