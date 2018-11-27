@@ -45,12 +45,13 @@ CREATE TABLE `requests` (
   `end` date DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `approval` tinyint(1) DEFAULT NULL,
+  `approval` tinyint(1) DEFAULT '0',
   `user_id` bigint(20) DEFAULT NULL,
+  `leave_type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_requests_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_8ead8b1e6b` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -72,7 +73,7 @@ CREATE TABLE `time_allocations` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -96,7 +97,8 @@ CREATE TABLE `users` (
   `invited_by_type` varchar(255) DEFAULT NULL,
   `invited_by_id` bigint(20) DEFAULT NULL,
   `invitations_count` int(11) DEFAULT '0',
-  `is_admin` tinyint(1) DEFAULT NULL,
+  `admin` tinyint(1) DEFAULT '0',
+  `role` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
@@ -104,7 +106,11 @@ CREATE TABLE `users` (
   KEY `index_users_on_invited_by_type_and_invited_by_id` (`invited_by_type`,`invited_by_id`),
   KEY `index_users_on_invitations_count` (`invitations_count`),
   KEY `index_users_on_invited_by_id` (`invited_by_id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+>>>>>>> 8bd37535702d86106f7046c4dd130a9129b99000
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -126,9 +132,15 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181101221431'),
 ('20181101222332'),
 ('20181106181708'),
+('20181106195927'),
 ('20181106200609'),
 ('20181108184655'),
 ('20181112192309'),
-('20181112194643');
+('20181112194643'),
+('20181118210643'),
+('20181118212331'),
+('20181118212728'),
+('20181119185828'),
+('20181122183157');
 
 
