@@ -51,7 +51,7 @@ CREATE TABLE `requests` (
   PRIMARY KEY (`id`),
   KEY `index_requests_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_8ead8b1e6b` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -106,7 +106,7 @@ CREATE TABLE `users` (
   KEY `index_users_on_invited_by_type_and_invited_by_id` (`invited_by_type`,`invited_by_id`),
   KEY `index_users_on_invitations_count` (`invitations_count`),
   KEY `index_users_on_invited_by_id` (`invited_by_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
