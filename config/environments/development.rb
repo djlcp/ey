@@ -79,8 +79,8 @@ config.action_mailer.delivery_method = :smtp
   address: "smtp.gmail.com",
   domain: "gmail.com",
   port: 587,
-  user_name: "keishmaaa@gmail.com",
-  password: "",
+  user_name: "djcpeytm@gmail.com",
+  password: "2018djcp",
   authentication: 'plain',
   enable_starttls_auto: true
 }

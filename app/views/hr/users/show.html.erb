@@ -1,26 +1,56 @@
-<div style="padding: 0 20px;">
-	<h2>View User</h2>
-	<p><strong>Name</strong></p>
-	<p><%= @user.first_name %> <%= @user.last_name %><p>
-	<p><strong>Email</strong></p>
-	<p><%= @user.email %></p>
-	<p><strong>Role</strong></p>
-	<p><%= @user.role %></p>
-	<p><strong>Admin</strong></p>
-	<p><%= @user.admin %></p>
-	<%= link_to "Edit", edit_hr_user_path(@user) %>
-	<%= link_to "Delete", hr_user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+<div class="container">
+  <h2>HR Panel</h2>
+  <p>User list</p>            
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Admin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.first_name %></td>
+        <td><%= @user.last_name %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.role %></td>
+        <td><%= @user.admin %></td>
+        <td><%= link_to "Edit", edit_hr_user_path(@user), class: 'btn btn-primary' %></td>
+        <td><%= link_to "Delete", hr_user_path(@user), class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div style="padding: 0 20px;">
-	<h2> Requests </h2>
-	<% @user.requests.each do |request| %>
-		<p><strong><%= request.description %></strong><p><%= request.start %> - <%= request.end %> </p>
-		<%- if request.approval == nil %>
-			<P> Status: Pending </P>
+
+<div class="container">
+  <h2>Leave Requests</h2>        
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @user.requests.each do |request| %>
+      <tr>
+        <td><%= request.description %></td>
+        <td><%= request.start.strftime("%d-%m-%Y") %></td>
+        <td><%= request.end.strftime("%d-%m-%Y") %></td>
+        	<%- if request.approval == nil %>
+			<td class="table-warning"> Pending </td>
 		<% elsif request.approval == true %>
-			<p> Status: Approved </p>
+			<td class="table-success"> Approved </td>
 		<% else request.approval == false %>
-			<p> Status: Declined </p>
+			<td class="table-danger"> Declined </td>
 		<% end %>
-	<% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
