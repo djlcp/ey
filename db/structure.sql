@@ -45,9 +45,10 @@ CREATE TABLE `requests` (
   `end` date DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `approval` tinyint(1) DEFAULT NULL,
+  `approval` tinyint(1) DEFAULT '0',
   `user_id` bigint(20) DEFAULT NULL,
   `type` varchar(255) DEFAULT NULL,
+  `leave_type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_requests_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_8ead8b1e6b` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
@@ -100,9 +101,23 @@ CREATE TABLE `users` (
   `reset_password_token` varchar(255) DEFAULT NULL,
   `reset_password_sent_at` datetime DEFAULT NULL,
   `remember_created_at` datetime DEFAULT NULL,
+  `invitation_token` varchar(255) DEFAULT NULL,
+  `invitation_created_at` datetime DEFAULT NULL,
+  `invitation_sent_at` datetime DEFAULT NULL,
+  `invitation_accepted_at` datetime DEFAULT NULL,
+  `invitation_limit` int(11) DEFAULT NULL,
+  `invited_by_type` varchar(255) DEFAULT NULL,
+  `invited_by_id` bigint(20) DEFAULT NULL,
+  `invitations_count` int(11) DEFAULT '0',
+  `admin` tinyint(1) DEFAULT '0',
+  `role` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
-  UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
+  UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
+  UNIQUE KEY `index_users_on_invitation_token` (`invitation_token`),
+  KEY `index_users_on_invited_by_type_and_invited_by_id` (`invited_by_type`,`invited_by_id`),
+  KEY `index_users_on_invitations_count` (`invitations_count`),
+  KEY `index_users_on_invited_by_id` (`invited_by_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -128,6 +143,13 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20181106181708'),
 ('20181106200609'),
 ('20181108184655'),
+('20181112192309'),
+('20181112194643'),
+('20181118210643'),
+('20181118212331'),
+('20181118212728'),
+('20181119185828'),
+('20181122183157'),
 ('20181122190145'),
 ('20181122194627');
 

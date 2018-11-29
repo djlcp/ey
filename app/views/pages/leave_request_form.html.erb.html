@@ -10,12 +10,44 @@
 
   <!--  NEEDS TO BE AUTO-AUTHENTICATED <%= f.input :name %> -->
 
-  <%= f.input :from_date %>
+<div class="field form-group">
+  <%= f.input :from_date %> <br>
+  <%= f.text_field :title class: 'form-control'%>
+</div>
 
+<div class="field form-group">
   <%= f.input :to_date %>
+</div>
 
+<div class="field form-group">
   <%= f.input :leave_type, as: :radio_buttons,
     collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
+</div>
 
+<div class="field form-group">
   <%= f.button :submit for approval %>
-<% end %>
+</div>
+
+Submit leave request form needs to 
+
+create request.new with user_id to match the above
+
+post "leave_type" to array value {sick, annual, study, other}
+
+create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "description"
+    t.string "leave_type"
+    t.date "start"
+    t.date "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "manager_approval"
+    t.boolean "counsellor_approval"
+    t.boolean "approved_both"
+    t.boolean "revoked"
+
+<form role="form">
+  <div class="form-group">
+    <label for="exampleinputemail">Email Address</label>
+    <input type="email" class="form-control" id="exampleinputemail" placeholder="Enter Email">
+    </div> 
