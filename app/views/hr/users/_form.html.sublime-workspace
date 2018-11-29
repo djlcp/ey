@@ -1,0 +1,283 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"boot",
+				"bootsnap"
+			],
+			[
+				"leave",
+				"leave_revoked_email_4cm"
+			],
+			[
+				"manag",
+				"manager_approval"
+			],
+			[
+				"User",
+				"UserMailer"
+			],
+			[
+				"En",
+				"ENGINE"
+			],
+			[
+				"assign",
+				"assign_from_row"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"ruby",
+			"class code copy.rb"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/requests/new.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/pages/request.html",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/controllers/users_controller.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/db/structure.sql",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/controllers/pages_controller.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/models/request.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/config/routes.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/db/schema.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/db/migrate/20181122183157_add_leave_type_to_request.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/Gemfile",
+		"/Users/RJS/Desktop/EYTime/EYTime/config/database.yml",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/application.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_form_abbr.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_form_multi_select.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_form_floating_labels.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_form_custom_checkbox_switch.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_form_collection_label.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_form_button.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/assets/stylesheets/simple_form_bootstrap/_simple_form_bootstrap.scss",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/leave_approved_email.html",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/leave_revoked_email_4cm.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/pages/request.html.erb.html",
+		"/Users/RJS/Desktop/EYTime/EYTime/config/secrets.yml",
+		"/Users/RJS/Desktop/EYTime/EYTime/.gitignore",
+		"/Users/RJS/Desktop/EYTime/EYTime/config/environments/development.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/config/environment.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/models/user.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/leave_request_cm_email.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/send_changed_password_email.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/send_signup_email.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/leave_revoked_email.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/leave_approved_email.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/views/user_notifier_mailer/leave_denied_email.html.erb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/mailers/user_notifier_mailer.rb",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/mailers/email - new password requested.html.erb.html",
+		"/Users/RJS/Desktop/EYTime/EYTime/app/mailers/autogen_sign_up.html",
+		"/Users/RJS/Desktop/read:write word files /plzwork.py",
+		"/Users/RJS/Desktop/Reddit-clone-project/reddit-clone-css.css",
+		"/Users/RJS/Desktop/Reddit-clone-project/Reddit-clone.html",
+		"/Users/RJS/Downloads/amazing_widgets.sql",
+		"/Users/RJS/Desktop/new_arrival.py",
+		"/Users/RJS/REAMDME.md",
+		"/Users/RJS/Desktop/class code copy.rb",
+		"/Users/RJS/Desktop/ttable_copy.rb",
+		"/Users/RJS/Desktop/TimesTables.rb",
+		"/Users/RJS/Desktop/ttable_copy",
+		"/Users/RJS/Desktop/LOE Input.py",
+		"/Users/RJS/Desktop/main.css",
+		"/Users/RJS/Desktop/HTML tester.html"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "_form.html.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"re",
+				"app/models/request.rb"
+			],
+			[
+				"requ",
+				"app/models/request.rb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"sch",
+				"db/schema.rb"
+			],
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"datab",
+				"config/database.yml"
+			],
+			[
+				"schem",
+				"db/schema.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
