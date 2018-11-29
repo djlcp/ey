@@ -57,7 +57,7 @@ def leave_revoked_email_4cm(request, user, manager)
     :subject => 'New leave request(s)' )
   end
 
- # THIS ONE NEEDS TO GO TO A USER"S COUNCELLOR
+ # THIS ONE NEEDS TO GO TO A USER"S MANAGER
   def leave_request_cm_email(user, manager)
     @user = user
     mail( :to => @request.user.manager.email,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_194643) do
+ActiveRecord::Schema.define(version: 2018_11_22_183157) do
 
   create_table "leave_app_logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fkey_request"
@@ -28,8 +28,9 @@ ActiveRecord::Schema.define(version: 2018_11_12_194643) do
     t.date "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "approval"
+    t.boolean "approval", default: false
     t.bigint "user_id"
+    t.integer "leave_type"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
@@ -60,7 +61,8 @@ ActiveRecord::Schema.define(version: 2018_11_12_194643) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
-    t.boolean "is_admin"
+    t.boolean "admin", default: false
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
