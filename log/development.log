@@ -38751,3 +38751,220 @@ Completed 200 OK in 95ms (Views: 89.7ms | ActiveRecord: 1.1ms)
 
 
 >>>>>>> 386c260ecf35168da071a6a54fccb265be7b2774
+Started GET "/" for 127.0.0.1 at 2018-11-29 18:51:56 +0000
+  [1m[35m (113.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (5.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT GET_LOCK('4376305880551127565', 0)[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddRoleToUsers (20181118210643)
+  [1m[35m (749.5ms)[0m  [1m[35mALTER TABLE `users` ADD `role` int[0m
+  ↳ db/migrate/20181118210643_add_role_to_users.rb:3
+  [1m[35m (18.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (26.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181118210643')[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddDefaultValueToIsAdminAttribute (20181118212331)
+  [1m[35m (98.2ms)[0m  [1m[35mALTER TABLE `users` CHANGE `is_admin` `is_admin` tinyint(1) DEFAULT FALSE[0m
+  ↳ db/migrate/20181118212331_add_default_value_to_is_admin_attribute.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181118212331')[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddDefaultValueToRole (20181118212728)
+  [1m[35m (69.0ms)[0m  [1m[35mALTER TABLE `users` CHANGE `role` `role` int DEFAULT 0[0m
+  ↳ db/migrate/20181118212728_add_default_value_to_role.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (6.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181118212728')[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to ChangeColumnName (20181119185828)
+  [1m[35m (81.7ms)[0m  [1m[35mALTER TABLE `users` CHANGE `is_admin` `admin` tinyint(1) DEFAULT FALSE[0m
+  ↳ db/migrate/20181119185828_change_column_name.rb:3
+  [1m[35m (18.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181119185828')[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (34.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('4376305880551127565')[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-11-29 18:53:06 +0000
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (4.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2673951176999383126_70122029041200 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 11005ms (Views: 10982.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-11-29 18:53:17 +0000
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543517598878" for 127.0.0.1 at 2018-11-29 18:53:19 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543517598878"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (1.2ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (3.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (250.6ms)
+Completed 200 OK in 305ms (Views: 87.0ms | ActiveRecord: 211.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 18:53:28 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.5ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2673951176999383126_70122083833560 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 130ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543517598879" for 127.0.0.1 at 2018-11-29 18:53:28 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543517598879"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.6ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (7.7ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-29 18:53:35 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 126ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 18:53:36 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2673951176999383126_70122082311200 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 79ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543517598880" for 127.0.0.1 at 2018-11-29 18:53:36 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543517598880"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (3.0ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (2.3ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (11.5ms)
+Completed 200 OK in 59ms (Views: 52.1ms | ActiveRecord: 3.0ms)
+
+
