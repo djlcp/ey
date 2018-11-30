@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="kontainer">
   <h2>HR Panel</h2>
   <h4>User list</h4>            
   <table class="table table-striped table-hover">
@@ -16,11 +16,11 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to "View User", hr_user_path(user), class: 'btn btn-primary' %></td>
+        <td><%= link_to "View User", hr_user_path(user), class: 'btn btn-admin' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
   <h4>Add new Users</h4>
-  <%= link_to 'new user', new_user_invitation_path, class: 'btn btn-primary' %>
+  <%= link_to 'new user', new_user_invitation_path, class: 'btn btn-admin' %>
 </div>
