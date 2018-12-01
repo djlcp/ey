@@ -20,6 +20,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
           <h2> Hello <%= current_user.first_name %> This is the placeholder section for your profile!</h2>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-admin"%>
           <hr class="light my-4">
           <div class="container">
       <h2>Leave Requests</h2>        
@@ -38,13 +39,7 @@
             <td><%= request.description %></td>
             <td><%= request.start.strftime("%d-%m-%Y") %></td>
             <td><%= request.end.strftime("%d-%m-%Y") %></td>
-              <%- if request.approval == 0 %>
-          <td class="table-warning"> Pending </td>
-        <% elsif request.approval == 1 %>
-          <td class="table-success"> Approved </td>
-        <% else request.approval == 2 %>
-          <td class="table-danger"> Declined </td>
-        <% end %>
+            <td><%= request.approval %>
           </tr>
         <% end %>
         </tbody>
@@ -64,6 +59,7 @@
   
     <hr class="light my-4">
                <a class="btn btn-light btn-xl js-scroll-trigger" href="#leave">Click this to request leave</a>
+
   </div>
 </div>
 </div>
