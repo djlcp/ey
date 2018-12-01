@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h2> Hello <%= current_user.first_name %> This is the placeholder section for your profile!</h2>
+          <h2> Hello, This is the placeholder section for your profile!</h2>
           <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-admin"%>
           <hr class="light my-4">
           <div class="container">
@@ -34,21 +34,22 @@
           </tr>
         </thead>
         <tbody>
-        <% current_user.requests.each do |request| %>
-          <tr>
-            <td><%= request.description %></td>
-            <td><%= request.start.strftime("%d-%m-%Y") %></td>
-            <td><%= request.end.strftime("%d-%m-%Y") %></td>
-            <td><%= request.approval %>
-          </tr>
-        <% end %>
+          <%- if user_signed_in? %>
+          <% current_user.requests.each do |request| %>
+            <tr>
+              <td><%= request.description %></td>
+              <td><%= request.start.strftime("%d-%m-%Y") %></td>
+              <td><%= request.end.strftime("%d-%m-%Y") %></td>
+              <td><%= request.approval %>
+            </tr>
+          <% end %>
+          <% end %>
         </tbody>
       </table>
     </div>
       <p class="text-faded mb-4">In this section, you will be able to see how many days leave you have left.</p>                 
+    </div>
   </div>
-  </div>
-
 </div>
 </section>
 
