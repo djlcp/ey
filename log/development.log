@@ -38968,3 +38968,846 @@ Processing by RequestsController#index as JSON
 Completed 200 OK in 59ms (Views: 52.1ms | ActiveRecord: 3.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:18:18 +0000
+  [1m[35m (9.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (19.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (7.6ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325716903160 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 8940ms (Views: 8918.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-11-29 19:18:27 +0000
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108883" for 127.0.0.1 at 2018-11-29 19:18:29 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108883"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (3.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (3.5ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (160.0ms)
+Completed 200 OK in 195ms (Views: 70.6ms | ActiveRecord: 119.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:21:22 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (23.6ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325721005780 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 455ms (Views: 395.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108884" for 127.0.0.1 at 2018-11-29 19:21:22 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108884"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (45.6ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (1.2ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (65.1ms)
+Completed 200 OK in 106ms (Views: 56.2ms | ActiveRecord: 45.6ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108885" for 127.0.0.1 at 2018-11-29 19:21:25 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108885"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.8ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (6.7ms)
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:21:29 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325752962920 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 242ms (Views: 234.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108886" for 127.0.0.1 at 2018-11-29 19:21:29 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108886"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.6ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.6ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (6.4ms)
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:21:46 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325759589760 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 297ms (Views: 288.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108887" for 127.0.0.1 at 2018-11-29 19:21:46 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108887"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (7.1ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108888" for 127.0.0.1 at 2018-11-29 19:21:49 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108888"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (5.5ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:43:36 +0000
+  [1m[35m (73.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (6.0ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325720986100 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 388ms (Views: 372.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108889" for 127.0.0.1 at 2018-11-29 19:43:36 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108889"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (21.3ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (4.9ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (35.6ms)
+Completed 200 OK in 65ms (Views: 40.6ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:43:41 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325772277740 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 200ms (Views: 192.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108890" for 127.0.0.1 at 2018-11-29 19:43:41 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108890"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (4.5ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:43:57 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325787138260 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 220ms (Views: 214.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108891" for 127.0.0.1 at 2018-11-29 19:43:57 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108891"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.5ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (6.6ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:43:59 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325789068880 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 173ms (Views: 95.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108892" for 127.0.0.1 at 2018-11-29 19:43:59 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108892"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (4.3ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:44:48 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325796167640 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 258ms (Views: 252.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108893" for 127.0.0.1 at 2018-11-29 19:44:49 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108893"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.6ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (7.1ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-11-29 19:44:54 +0000
+Processing by Hr::UsersController#index as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :is_hr? rendered or redirected
+Completed 302 Found in 341ms (ActiveRecord: 286.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:44:55 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325787464960 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 157ms (Views: 154.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108894" for 127.0.0.1 at 2018-11-29 19:44:55 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108894"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.5ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (4.4ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:45:03 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325721803120 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 256ms (Views: 249.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108895" for 127.0.0.1 at 2018-11-29 19:45:03 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108895"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.8ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (4.8ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:45:04 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325783928300 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 141ms (Views: 136.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108896" for 127.0.0.1 at 2018-11-29 19:45:04 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108896"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.8ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (6.3ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:45:05 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325722817960 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 223ms (Views: 216.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108897" for 127.0.0.1 at 2018-11-29 19:45:06 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108897"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (1.7ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.9ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (10.1ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:45:06 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325782333340 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 128ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108898" for 127.0.0.1 at 2018-11-29 19:45:06 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108898"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.5ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (6.6ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-29 19:45:08 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__3828265426391498323_70325775517980 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 134ms (Views: 128.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-10-29&end=2018-12-03&_=1543519108899" for 127.0.0.1 at 2018-11-29 19:45:08 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-10-29", "end"=>"2018-12-03", "_"=>"1543519108899"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (4.7ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-01 15:23:14 +0000
+  [1m[35m (62.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (36.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (7.1ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154690361700 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 1685ms (Views: 1670.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-01 15:23:17 +0000
+  [1m[35m (7.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543677798683" for 127.0.0.1 at 2018-12-01 15:23:19 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543677798683"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (12.5ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (3.7ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (234.9ms)
+Completed 200 OK in 278ms (Views: 104.9ms | ActiveRecord: 165.2ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:23 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:23 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.1ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154672022540 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 216ms (Views: 130.5ms | ActiveRecord: 64.7ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:28 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:28 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.3ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154676944300 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 109ms (Views: 106.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:29 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:29 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154715711000 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 151ms (Views: 146.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:29 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:29 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154672611760 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 106ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:29 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:29 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154707373580 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:30 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:30 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+Completed 200 OK in 246ms (Views: 235.3ms | ActiveRecord: 0.0ms)
+
+
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.3ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154662519560 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 134ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:30 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:30 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154717363920 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 105ms (Views: 103.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:23:30 +0000
+Processing by Hr::UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:30 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.3ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154713827980 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 105ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:44 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lb3jzuTUw6VQfyFJXp049JH4Fh3rvaHCkKWipFcLa3qps9V39tb6kmhP8VWhy6M44hUri4/vapTZYSb5zwy74A==", "user"=>{"email"=>"richard_s_contact@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (105.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'richard_s_contact@icloud.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 337ms (ActiveRecord: 105.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lb3jzuTUw6VQfyFJXp049JH4Fh3rvaHCkKWipFcLa3qps9V39tb6kmhP8VWhy6M44hUri4/vapTZYSb5zwy74A==", "user"=>{"email"=>"richard_s_contact@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154706673420 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 234ms (Views: 85.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-01 15:23:45 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.9ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154676798580 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 155ms (Views: 152.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:23:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.0ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154707921000 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 115ms (Views: 112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-01 15:23:59 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-01 15:24:02 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+QfX03BJk7GSl/0GMmnkwZZGYrVf3hJGu7RCca/kxpPFCeFqYkuqhqqnLRrNP38N5atfIzuM2RDycMYsN+MWCQ==", "user"=>{"email"=>"richard_s_contact@icloud.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'richard_s_contact@icloud.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/hr/users
+Completed 302 Found in 182ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/hr/users" for 127.0.0.1 at 2018-12-01 15:24:02 +0000
+Processing by Hr::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ /Users/RJS/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :is_hr? rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-01 15:24:02 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154718363100 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 70ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-01 15:24:03 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543677843731" for 127.0.0.1 at 2018-12-01 15:24:03 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543677843731"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (3.1ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.6ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (9.7ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-01 15:24:12 +0000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4161093151343445075_70154713995300 at /Users/RJS/Desktop/EYTime/EYTime/app/views/layouts/application.html.erb:8)
+Completed 200 OK in 136ms (Views: 131.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543677843732" for 127.0.0.1 at 2018-12-01 15:24:13 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543677843732"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (4.8ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
