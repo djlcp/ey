@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_183157) do
+ActiveRecord::Schema.define(version: 2018_12_01_124506) do
 
   create_table "leave_app_logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fkey_request"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_183157) do
     t.date "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "approval", default: false
+    t.integer "approval", default: 0
     t.bigint "user_id"
     t.integer "leave_type"
     t.index ["user_id"], name: "index_requests_on_user_id"
@@ -64,12 +64,16 @@ ActiveRecord::Schema.define(version: 2018_11_22_183157) do
     t.integer "invitations_count", default: 0
     t.boolean "admin", default: false
     t.integer "role", default: 0
+<<<<<<< HEAD
     t.integer "count_sick_leave", default: 0
     t.integer "count_annual_leave", default: 0
     t.integer "count_study_leave", default: 0
     t.integer "count_mat_pat_leave", default: 0
     t.integer "count_training_leave", default: 0
     t.integer "count_other_leave", default: 0
+=======
+    t.date "join_date"
+>>>>>>> 5085bd2cd253698f9c267e9c4d9934004245fce3
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

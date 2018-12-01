@@ -1,19 +1,30 @@
 <div class="form-container">
-<%= form_for([:hr, @user]) do |f| %>
-	<div class="form-field">
-	<%= f.label :first_name %>
-	<%= f.text_field :first_name %>
-	</div>
-	<div class="form-field">
-	<%= f.label :last_name %>
-	<%= f.text_field :last_name %>
-	</div>
-	<div class="form-field">
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-	</div>
-	<%= f.label :role %>
-	<%= f.select :role, User.roles.keys %>
-	<%= f.submit %>
-<% end %>
+	<%= form_for([:hr, @user]) do |f| %>
+		<div class="form-group">
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name %>
+		</div>
+		<div class="form-group">
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name %>
+		</div>
+		<div class="form-group">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+		<div class="form-group">
+			<%= f.label :role %>
+			<%= f.select :role, User.roles.keys %>
+		</div>
+		 <div class="form-group">
+    		<%= f.label :admin %>
+    		<%= f.check_box :admin %>
+  		</div>
+  		 <div class="form-group">
+    		<%= f.label :join_date %>
+    		<%= f.date_field :join_date %>
+  		</div>
+		<%= f.submit 'Update User' , class: 'btn btn-default'%>
+		<%= link_to "Cancel", hr_user_path(@user), class: 'btn btn-admin' %>
+	<% end %>
 </div>

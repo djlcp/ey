@@ -33,7 +33,7 @@ class Hr::UsersController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :email, :role)
+		params.require(:user).permit(:first_name, :last_name, :email, :role, :admin, :join_date)
 	end
 
 end
