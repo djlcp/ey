@@ -20,6 +20,10 @@
     		<%= f.label :admin %>
     		<%= f.check_box :admin %>
   		</div>
+  		 <div class="form-group">
+    		<%= f.label :join_date %>
+    		<%= f.date_field :join_date %>
+  		</div>
 		<%= f.submit 'Update User' , class: 'btn btn-default'%>
 		<%= link_to "Cancel", hr_user_path(@user), class: 'btn btn-admin' %>
 	<% end %>

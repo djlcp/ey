@@ -42,11 +42,11 @@
         <td><%= request.description %></td>
         <td><%= request.start.strftime("%d-%m-%Y") %></td>
         <td><%= request.end.strftime("%d-%m-%Y") %></td>
-        	<%- if request.approval == nil %>
+        	<%- if request.approval == 0 %>
 			<td class="table-warning"> Pending </td>
-		<% elsif request.approval == true %>
+		<% elsif request.approval == 1 %>
 			<td class="table-success"> Approved </td>
-		<% else request.approval == false %>
+		<% else request.approval == 2 %>
 			<td class="table-danger"> Declined </td>
 		<% end %>
       </tr>

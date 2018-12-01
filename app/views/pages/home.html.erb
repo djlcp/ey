@@ -16,11 +16,40 @@
 
 
 <section class="bg-primary" id="profile">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto text-center">
-      <h2 class="section-heading text-white">This is the placeholder section for your profile!</h2>
-      <hr class="light my-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2> Hello <%= current_user.first_name %> This is the placeholder section for your profile!</h2>
+          <hr class="light my-4">
+          <div class="container">
+      <h2>Leave Requests</h2>        
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% current_user.requests.each do |request| %>
+          <tr>
+            <td><%= request.description %></td>
+            <td><%= request.start.strftime("%d-%m-%Y") %></td>
+            <td><%= request.end.strftime("%d-%m-%Y") %></td>
+              <%- if request.approval == 0 %>
+          <td class="table-warning"> Pending </td>
+        <% elsif request.approval == 1 %>
+          <td class="table-success"> Approved </td>
+        <% else request.approval == 2 %>
+          <td class="table-danger"> Declined </td>
+        <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
       <p class="text-faded mb-4">In this section, you will be able to see how many days leave you have left.</p>                 
   </div>
   </div>

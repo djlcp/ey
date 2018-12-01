@@ -5,6 +5,8 @@ class Request < ApplicationRecord
 		study_leave: 3
 	}
 
+	enum approval: [:pending, :approved, :declined]
+
 	belongs_to :user
 
 	validates(:end, :start, :leave_type, presence: true)
