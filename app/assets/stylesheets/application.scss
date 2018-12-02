@@ -1,23 +1,28 @@
-@import 'vendor/scss/mixins.scss';
-@import 'vendor/scss/variables.scss';
+@import "toastr";
 
+@import 'vendor/scss/mixins';
+@import 'vendor/scss/variables';
 
-@import 'vendor/scss/bootstrap-overrides.scss';
-@import 'vendor/scss/global.scss';
+@import 'vendor/scss/bootstrap-overrides';
+@import 'vendor/scss/global';
 
-@import 'vendor/scss/opportunities.scss';
-@import 'creative.scss';
+@import 'vendor/scss/opportunities';
+@import 'creative';
 
-@import 'css/magnific-popup.scss';
-@import 'vendor/fullcalendar.scss';
-@import 'login.scss';
+@import 'css/magnific-popup';
+@import 'vendor/fullcalendar';
+@import 'login';
 
-@import 'vendor/scss/masthead.scss';
-@import 'vendor/scss/navbar.scss';
+@import 'vendor/scss/masthead';
+@import 'vendor/scss/navbar';
 
-@import 'css/bootstrap-grid.scss';
-@import 'css/bootstrap-reboot.scss';
-@import 'css/bootstrap.scss';
+@import 'css/bootstrap-grid';
+@import 'css/bootstrap-reboot';
+@import 'css/bootstrap';
 
 @import 'bootstrap';
 @import 'adminpanel';
+
+@import 'variables';
+@import 'base/typography';
+@import 'button';

@@ -56,21 +56,10 @@
       }
     }
     &.navbar-shrink {
-      border-bottom: 1px solid fade-out($gray-900, .9);
-      background-color: $black;
-      .navbar-brand {
-        color: $primary;
-        &:focus,
-        &:hover {
-          color: darken($primary, .1);
-        }
-      }
-      .navbar-nav > li.nav-item > a.nav-link,
-      .navbar-nav > li.nav-item > a.nav-link:focus {
-        color: $gray-900;
-        &:hover {
-          color: $primary;
-        }
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        opacity: 1;
       }
     }
   }
