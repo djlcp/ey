@@ -1,8 +1,8 @@
 class Hr::UsersController < ApplicationController
 	before_action :authenticate_user!, :is_hr?
 
-  	def index
-  		@users = User.all
+	def index
+		@users = User.all
 	end
 
 	def show

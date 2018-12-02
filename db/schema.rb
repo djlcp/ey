@@ -64,16 +64,13 @@ ActiveRecord::Schema.define(version: 2018_12_01_124506) do
     t.integer "invitations_count", default: 0
     t.boolean "admin", default: false
     t.integer "role", default: 0
-<<<<<<< HEAD
     t.integer "count_sick_leave", default: 0
     t.integer "count_annual_leave", default: 0
     t.integer "count_study_leave", default: 0
     t.integer "count_mat_pat_leave", default: 0
     t.integer "count_training_leave", default: 0
     t.integer "count_other_leave", default: 0
-=======
     t.date "join_date"
->>>>>>> 5085bd2cd253698f9c267e9c4d9934004245fce3
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
