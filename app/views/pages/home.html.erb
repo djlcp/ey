@@ -13,13 +13,12 @@
     </div>
   </div>
 </header>
-
-
 <section class="bg-primary" id="profile">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h2> Hello, This is the placeholder section for your profile!</h2>
+          <h2> Hello, This is the placeholder section for your profile!
+          </h2>
           <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-admin"%>
           <hr class="light my-4">
           <div class="container">
@@ -35,14 +34,14 @@
         </thead>
         <tbody>
           <%- if user_signed_in? %>
-          <% current_user.requests.each do |request| %>
-            <tr>
-              <td><%= request.description %></td>
-              <td><%= request.start.strftime("%d-%m-%Y") %></td>
-              <td><%= request.end.strftime("%d-%m-%Y") %></td>
-              <td><%= request.approval %>
-            </tr>
-          <% end %>
+            <% current_user.requests.each do |request| %>
+              <tr>
+                <td><%= request.description %></td>
+                <td><%= request.start.strftime("%d-%m-%Y") %></td>
+                <td><%= request.end.strftime("%d-%m-%Y") %></td>
+                <td><%= request.approval %>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
