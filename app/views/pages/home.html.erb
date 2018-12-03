@@ -111,9 +111,15 @@
               <td><%= request.description %></td>
               <td><%= request.start.strftime("%d-%m-%Y") %></td>
               <td><%= request.end.strftime("%d-%m-%Y") %></td>
-              <td><%= request.approval %>
+              <%- if request.pending? %>
+                    <td class="table-warning"> Pending </td>
+                <% elsif request.approved? %>
+                    <td class="table-success"> Approved </td>
+                <% else request.declined? %>
+                    <td class="table-danger"> Declined </td>
+              <% end %>
             </tr>
-          <% end %>
+            <% end %>
           <% end %>
         </tbody>
       </table>
