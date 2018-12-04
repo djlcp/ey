@@ -15,11 +15,11 @@ class RequestsController < ApplicationController
   def create
   	@request = current_user.requests.new(request_params)
    	if @request.save
-      UserNotifierMailer.leave_request_cm_email(
-        user: current_user,
-        recipient: current_user.manager,
-        request: @request
-      ).deliver_now
+      # UserNotifierMailer.leave_request_cm_email(
+      #   user: current_user,
+      #   recipient: current_user.manager,
+      #   request: @request
+      # ).deliver_now
       # UserNotifierMailer.leave_request_cm_email().deliver_now
 
       # leave_request_cm_email(request.current_user.manager)
