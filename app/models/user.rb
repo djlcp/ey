@@ -15,6 +15,10 @@ class User < ApplicationRecord
 
   # below some active record assocation examples variables not yet confirmed
 
+  def full_name
+    first_name + ' ' + last_name
+  end
+
   after_initialize do
     self.role ||= :standard if new_record?
   end

@@ -6,6 +6,6 @@ class Approvers < ActiveRecord::Migration[5.2]
       t.string  :approver
 
       t.timestamps
-	end
+    end
   end
 end
