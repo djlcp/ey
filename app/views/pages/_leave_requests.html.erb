@@ -23,7 +23,7 @@
             <tbody>
               <% if current_user.requests.blank? %>
                 <tr>
-                  <td>You currently have no change requests</td>
+                  <td colspan="4">You currently have no change requests</td>
                 </tr>
               <% else %>
                 <% current_user.requests.each do |request| %>
