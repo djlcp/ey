@@ -51,11 +51,7 @@ CREATE TABLE `requests` (
   PRIMARY KEY (`id`),
   KEY `index_requests_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_8ead8b1e6b` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
->>>>>>> c899fe9fb4b7ff75c18e4c2bc837f18633145284
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

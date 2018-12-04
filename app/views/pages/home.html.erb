@@ -109,8 +109,8 @@
           <% current_user.requests.each do |request| %>
             <tr>
               <td><%= request.description %></td>
-              <td><%= request.start.strftime("%d-%m-%Y") %></td>
-              <td><%= request.end.strftime("%d-%m-%Y") %></td>
+              <td><%= request.start %></td>
+              <td><%= request.end %></td>
               <%- if request.pending? %>
                     <td class="table-warning"> Pending </td>
                 <% elsif request.approved? %>
