@@ -10,11 +10,15 @@ class ApplicationController < ActionController::Base
 	def authenticate_inviter!
   	if user_signed_in?
   		unless current_user.admin? or current_user.hr?
-    			redirect_to root_url, :alert => "Access Denied"
+  			redirect_to root_url, :alert => "Access Denied"
   		end
   	end
   	super
 	end
+
+  def after_invite_path_for(resource)
+    hr_users_path
+  end
 
   protected
 
