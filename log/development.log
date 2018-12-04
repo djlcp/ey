@@ -46347,3 +46347,412 @@ Processing by RequestsController#index as JSON
 Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-04 18:37:23 +0000
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2910376958492186228_69961863226760 at /home/elita/Documents/coding_programme/rails/ey/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 211ms (Views: 205.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 18:37:24 +0000
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543948644440" for 127.0.0.1 at 2018-12-04 18:37:24 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543948644440"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.6ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (24.4ms)
+Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2018-12-04 18:38:02 +0000
+Processing by PagesController#calendar as HTML
+  Rendering pages/calendar.html.erb within layouts/application
+  Rendered pages/calendar.html.erb within layouts/application (0.4ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2910376958492186228_69961629942140 at /home/elita/Documents/coding_programme/rails/ey/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 73ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 18:38:02 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543948682332" for 127.0.0.1 at 2018-12-04 18:38:02 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543948682332"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/index.json.jbuilder (9.0ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/requests/new?date=2018-12-13" for 127.0.0.1 at 2018-12-04 18:39:26 +0000
+Processing by RequestsController#new as HTML
+  Parameters: {"date"=>"2018-12-13"}
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/new.html.erb within layouts/application (11.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2910376958492186228_69961662366960 at /home/elita/Documents/coding_programme/rails/ey/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 56ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 18:39:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests/new?date=2018-12-12" for 127.0.0.1 at 2018-12-04 18:39:33 +0000
+Processing by RequestsController#new as HTML
+  Parameters: {"date"=>"2018-12-12"}
+  Rendering requests/new.html.erb within layouts/application
+  Rendered requests/new.html.erb within layouts/application (1.8ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2910376958492186228_69961695503860 at /home/elita/Documents/coding_programme/rails/ey/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 18:39:33 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-04 19:12:14 +0000
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__4204116035100638421_70168828382280 at /home/elita/Documents/coding_programme/rails/ey/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 259ms (Views: 253.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 19:12:15 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543950735420" for 127.0.0.1 at 2018-12-04 19:12:15 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543950735420"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (1.1ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.3ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/_request.json.jbuilder (0.2ms)
+  Rendered requests/index.json.jbuilder (30.2ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-04 20:08:13 +0000
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/elita/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+DEPRECATION WARNING: The asset "all.css" is not present in the asset pipeline.Falling back to an asset that may be in the public folder.
+This behavior is deprecated and will be removed.
+To bypass the asset pipeline and preserve this behavior,
+use the `skip_pipeline: true` option.
+ (called from _app_views_layouts_application_html_erb__2814170839659371165_70187617438620 at /home/elita/Documents/coding_programme/rails/ey/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 327ms (Views: 317.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 20:08:13 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/stylesheets/all.css" for 127.0.0.1 at 2018-12-04 20:08:14 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/stylesheets/all.css"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/requests.json?start=2018-11-26&end=2019-01-07&_=1543954094782" for 127.0.0.1 at 2018-12-04 20:08:15 +0000
+Processing by RequestsController#index as JSON
+  Parameters: {"start"=>"2018-11-26", "end"=>"2019-01-07", "_"=>"1543954094782"}
+  Rendering requests/index.json.jbuilder
+  [1m[36mRequest Load (0.8ms)[0m  [1m[34mSELECT `requests`.* FROM `requests`[0m
+  ↳ app/views/requests/index.json.jbuilder:1
+  Rendered requests/_request.json.jbuilder (0.5ms)
+  Rendered requests/_request.json.jbuilder (0.4ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.3ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.3ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.3ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.1ms)
+  Rendered requests/_request.json.jbuilder (0.3ms)
+  Rendered requests/index.json.jbuilder (34.6ms)
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 1.8ms)
+
+
