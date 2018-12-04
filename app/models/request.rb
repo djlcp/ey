@@ -1,5 +1,4 @@
 class Request < ApplicationRecord
-
 	enum leave_type: {
 		annual_leave: 1,
     training: 2,
@@ -10,8 +9,6 @@ class Request < ApplicationRecord
     unpaid: 7,
     other: 8
 	}
-
-
 
 	enum approval: [:pending, :approved, :declined]
 

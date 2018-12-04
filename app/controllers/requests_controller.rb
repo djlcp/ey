@@ -9,7 +9,9 @@ class RequestsController < ApplicationController
   end
 
   def new
-  	@request = Request.new
+    type_param = params[:type]
+    leave_type = type_param if type_param.in?(Request.leave_types.keys)
+  	@request = Request.new(leave_type: leave_type)
   end
 
   def create
