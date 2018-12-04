@@ -8,36 +8,6 @@ $(document).on('turbolinks:load', function() {
   //   }
   // });
   $('#calendar').fullCalendar({
-      dayClick: function(date, jsEvent, view) {
-
-          var target = jsEvent.target;
-
-              var chosenDate = date.format();
-
-              console.debug(chosenDate);
-
-          if($(target).hasClass('fc-highlight'))
-          {
-
-            if($('span', this).length == 0)
-            {
-              $('span.new-request').remove();
-              $(this).append('<span class="new-request">+ Create Request</span>');
-            }
-            else
-            {
-              window.location.href = '/requests/new?date=' + chosenDate;
-            }
-          }
-
-
-
-//          var clickDate = date.format();
-//          $('#start').val(clickDate);
-//          $('#dialog').dialog('open');
-
-      /*alert('a day has been clicked!');*/
-      },
       events: '/requests.json',
       firstDay: 1, // week starts from Monday
       fixedWeekCount: false, //caledar will have 4,5 or 6 weeks,depending on the month
@@ -79,7 +49,7 @@ $(document).on('turbolinks:load', function() {
         calendar.fullCalendar('unselect');
       },*/
 
-      themeSystem: "jquery-ui"
+      themeSystem: "bootstrap4"
     });
 
 

@@ -12,7 +12,6 @@
 //
 // JS FROM GEMS
 //= require jquery
-//= require jquery-ui
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

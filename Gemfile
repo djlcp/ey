@@ -71,4 +71,4 @@ gem 'devise_invitable'
 gem 'momentjs-rails'
 
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+#gem 'jquery-ui-rails'

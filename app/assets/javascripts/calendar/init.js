@@ -40,8 +40,9 @@ $(document).on('turbolinks:load', function() {
       selectHelper: true,
       editable: true,
       eventLimit: true,
-      theme: true;
-      themeSystem: "jquery-ui",
+      theme: true,
+//      themeSystem: "jquery-ui",
+themeSystem: "bootstrap4",
       events: '/requests.json',
 
       //TESTS
