@@ -14,13 +14,13 @@
               <%= link_to 'Profile', edit_user_registration_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#calendar">Calendar</a>
+            <%= link_to 'Calendar', root_path(anchor: 'calendar'), class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#leave">Leave</a>
+            <%= link_to 'Leave', root_path(anchor: 'leave'), class: 'nav-link' %>
           </li>
            <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#opportunities">Opportunities</a>
+            <%= link_to 'Opportunities', root_path(anchor: 'opportunities'), class: 'nav-link' %>
           </li>
           <% if current_user.admin? || current_user.hr? %>
             <li class="nav-item">

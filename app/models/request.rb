@@ -1,6 +1,4 @@
 class Request < ApplicationRecord
-	LEAVE_TYPES = [['Holiday', 1], ['Illness', 2], ['Study Leave', 3], ['Maternity', 4], ['Paternity', 5], ['Unpaid', 6], ['Other', 7]]
-
 	enum leave_type: {
 		annual_leave: 1,
     training: 2,
@@ -11,8 +9,6 @@ class Request < ApplicationRecord
     unpaid: 7,
     other: 8
 	}
-
-
 
 	enum approval: [:pending, :approved, :declined]
 

@@ -73,3 +73,4 @@ gem 'momentjs-rails'
 gem 'jquery-rails'
 gem 'mini_racer'
 
+gem 'awesome_print'
