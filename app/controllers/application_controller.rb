@@ -26,5 +26,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :current_password) }
     devise_parameter_sanitizer.permit(:invite, keys: [:first_name, :last_name, :email, :role, :admin, :join_date])
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name])
   end
 end
