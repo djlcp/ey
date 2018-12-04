@@ -6,26 +6,24 @@
       <%= @request.errors.full_messages.to_sentence %>
     <% end %>
 <div class="form-row">
-    <div class="field form-group">
+    <div class="field form-group col-md-4">
       <%#= f.input :leave_type, as: :radio_buttons,
         collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
       <%= f.label :leave_type %>
-      <div class="select-style">
-        <%= f.select :leave_type, Request.leave_types.keys %>
+      <div>
+        <%= f.select :leave_type, Request::LEAVE_TYPES, {}, { class: "form-control" } %>
       </div>
     </div>
-</div>
-<div class="form-row">
     <div class="field form-group col-md-4">
       <%= f.label :start %>
       <div class="cal-style">
-        <%= f.date_field :start %>
+        <%= f.date_field :start, class: "form-control" %>
       </div>
     </div>
     <div class="field form-group col-md-4">
       <%= f.label :end %>
       <div class="cal-style">
-        <%= f.date_field :end %>
+        <%= f.date_field :end, class: "form-control" %>
       </div>
     </div>
 </div>
@@ -33,11 +31,8 @@
       <%= f.label :description %>
       <%= f.text_field :description, class: 'form-control'%>
     </div>
-
-
-
     <div class="field form-group">
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.submit "Submit", class: "button" %>
     </div>
 
   <% end %>
