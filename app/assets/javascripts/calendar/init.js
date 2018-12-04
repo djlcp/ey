@@ -8,9 +8,10 @@ $(document).on('turbolinks:load', function() {
   //   }
   // });
   $('#calendar').fullCalendar({
-      // dayClick: function(date, jsEvent, view) {
-      //      alert('a day has been clicked!'); ///check dayclick
-      // }, 
+      dayClick: function(date, jsEvent, view) {
+        alert(date);
+          //alert('a day has been clicked!'); ///check dayclick
+       }, 
      
       firstDay: 1, // week starts from Monday
       fixedWeekCount: false, //caledar will have 4,5 or 6 weeks,depending on the month
@@ -39,6 +40,7 @@ $(document).on('turbolinks:load', function() {
       selectHelper: true,
       editable: true,
       eventLimit: true,
+      theme: true;
       themeSystem: "jquery-ui",
       events: '/requests.json',
 
