@@ -4,6 +4,8 @@
     <title>EYTM: EY Time Manager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
 
     <%= stylesheet_link_tag :application, 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag :application, 'data-turbolinks-track': 'reload' %>
@@ -19,7 +21,7 @@
     <!-- Custom fonts for this template -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
+    <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
   <body id="page-top">
@@ -37,3 +39,4 @@
 
 </html>
 
+   

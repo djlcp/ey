@@ -16,13 +16,13 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require popper
 //= require bootstrap-sprockets
 //= require moment
 //= require toastr
 
 // VENDOR JS (FILES COPIED INTO PROJECT)
-//= vendor/jquery.magnific-popup
 //= vendor/scrollreveal
 
 // FULL CALENDAR
