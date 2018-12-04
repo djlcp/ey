@@ -9,6 +9,8 @@ class Request < ApplicationRecord
 
 	belongs_to :user
 
+	def as_event
+		{ title: description, end: self.end, start: start }
+	end
 	validates(:end, :start, :leave_type, presence: true)
-
 end
