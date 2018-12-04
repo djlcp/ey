@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
   def create
   	@request = Request.new(request_params)
    	@request.save
-   	redirect_to calendar_path
+   	redirect_to root_path
   end
 
   def show

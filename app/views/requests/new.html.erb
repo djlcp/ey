@@ -11,7 +11,7 @@
         collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
       <%= f.label :leave_type %>
       <div>
-        <%= f.select :leave_type, Request::LEAVE_TYPES, {}, { class: "form-control" } %>
+        <%= f.select :leave_type, Request.leave_types.keys.map { |type| [type.humanize, type] }, {}, { class: "form-control" } %>
       </div>
     </div>
     <div class="field form-group col-md-4">
