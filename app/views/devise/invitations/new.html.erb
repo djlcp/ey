@@ -19,7 +19,7 @@
 	  <div class="form-group">
 	  	<%= f.label :role %>
 	  	<div class="select-style">
-			<%= f.select :role, User.roles.keys %>
+			<%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] } %>
 	  	</div>
 	  </div>
 
