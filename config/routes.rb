@@ -8,6 +8,10 @@ Rails.application.routes.draw do
  
   get 'admin', to: 'hr/users#index'
 
+  get 'accept', to: 'accept#index'
+  get 'accept/:id', to: 'accept#index'
+
+
   namespace :hr do
   	resources :users
   end
