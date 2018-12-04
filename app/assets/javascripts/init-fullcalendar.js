@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function() {
               window.location.href = '/requests/new?date=' + chosenDate;
             }
           }
-    
+
 
 
 //          var clickDate = date.format();
@@ -83,8 +83,7 @@ $(document).on('turbolinks:load', function() {
     });
 
 
-    $('.datepicker').datepicker({
-          dateFormat: "yy-mm-dd",
-        
-    });
+    // $('.datepicker').datepicker({
+    //     dateFormat: "yy-mm-dd",
+    // });
 });
