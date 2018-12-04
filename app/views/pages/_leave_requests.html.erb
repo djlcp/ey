@@ -1,0 +1,125 @@
+<section id="leave">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Leave Requests</h2>
+        <hr class="my-4">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if current_user.requests.blank? %>
+                <tr>
+                  <td>You currently have no change requests</td>
+                </tr>
+              <% else %>
+                <% current_user.requests.each do |request| %>
+                  <tr>
+                    <td><%= request.description %></td>
+                    <td><%= request.start %></td>
+                    <td><%= request.end %></td>
+                    <%- if request.pending? %>
+                          <td class="table-warning"> Pending </td>
+                      <% elsif request.approved? %>
+                          <td class="table-success"> Approved </td>
+                      <% else request.declined? %>
+                          <td class="table-danger"> Declined </td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="col-12">
+         <div class="container">
+          <div class="row">
+            <%= render 'leave_request',
+              title: 'Annual Leave',
+              icon: 'fa-sun',
+              link: '#',
+              link_text: 'Request annual leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Training Leave',
+              icon: 'fa-train',
+              link: '#',
+              link_text: 'Request training leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Study Leave',
+              icon: 'fa-book-open',
+              link: '#',
+              link_text: 'Request study leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Sick Leave',
+              icon: 'fa-user-md',
+              link: '#',
+              link_text: 'Log sick leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Maternity leave',
+              icon: 'fa-child',
+              link: '#',
+              link_text: 'Register maternity leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Paternity leave',
+              icon: 'fa-child',
+              link: '#',
+              link_text: 'Register paternity leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Unpaid Leave',
+              icon: 'fa-hiking',
+              link: '#',
+              link_text: 'Request unpaid leave'
+            %>
+
+            <%= render 'leave_request',
+              title: 'Other Leave',
+              icon: 'fa-calendar-alt',
+              link: '#',
+              link_text: 'Request other leave'
+            %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-primary" id="profile">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="container">
+          <h2>Leave Requests</h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

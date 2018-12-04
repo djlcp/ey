@@ -22,7 +22,6 @@
 //= require toastr
 
 // VENDOR JS (FILES COPIED INTO PROJECT)
-//= vendor/jquery.magnific-popup
 //= vendor/scrollreveal
 
 // FULL CALENDAR
