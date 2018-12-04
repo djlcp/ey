@@ -49,7 +49,7 @@ $(document).on('turbolinks:load', function() {
         calendar.fullCalendar('unselect');
       },*/
 
-      themeSystem: "jquery-ui"
+      themeSystem: "bootstrap4"
     });
 
 

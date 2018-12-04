@@ -5,26 +5,7 @@
     <% if @request.errors.present? %>
       <%= @request.errors.full_messages.to_sentence %>
     <% end %>
-
-    <div class="field form-group">
-      <%= f.label :start %>
-      <div class="cal-style">
-        <%= f.date_field :start %>
-      </div>
-    </div>
-
-    <div class="field form-group">
-      <%= f.label :description %>
-      <%= f.text_field :description, class: 'form-control'%>
-    </div>
-
-    <div class="field form-group">
-      <%= f.label :end %>
-      <div class="cal-style">
-        <%= f.date_field :end %>
-      </div>
-    </div>
-
+<div class="form-row">
     <div class="field form-group">
       <%#= f.input :leave_type, as: :radio_buttons,
         collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
@@ -33,9 +14,30 @@
         <%= f.select :leave_type, Request.leave_types.keys %>
       </div>
     </div>
+</div>
+<div class="form-row">
+    <div class="field form-group col-md-4">
+      <%= f.label :start %>
+      <div class="cal-style">
+        <%= f.date_field :start %>
+      </div>
+    </div>
+    <div class="field form-group col-md-4">
+      <%= f.label :end %>
+      <div class="cal-style">
+        <%= f.date_field :end %>
+      </div>
+    </div>
+</div>
+    <div class="field form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control'%>
+    </div>
+
+
 
     <div class="field form-group">
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-primary" %>
     </div>
 
   <% end %>
