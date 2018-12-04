@@ -1,0 +1,6 @@
+$('.calendar').fullCalendar(
+  'renderEvent', 
+  <%= @request.as_json %>,
+  true
+);
+$('.modal').hide();
