@@ -15,6 +15,14 @@ default: &default
   password: password
   host: localhost
 
+default: default
+ adapter: mysql
+ encoding: utf8
+ pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+ username: root
+ password: Red@Right*88
+ host: localhost
+
 development:
   <<: *default
   database: development_ey
