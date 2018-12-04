@@ -11,12 +11,11 @@
 // about supported directives.
 //
 // JS FROM GEMS
+//= require jquery
+//= require jquery-ui
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery
-//= require jquery_ujs
-//= require jquery-ui
 //= require popper
 //= require bootstrap-sprockets
 //= require moment

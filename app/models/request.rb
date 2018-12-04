@@ -1,12 +1,13 @@
 class Request < ApplicationRecord
 	enum leave_type: {
-		holiday: 1,
-		illness: 2,
-		study_leave: 3,
-    maternity: 4,
-    paternity: 5,
-    unpaid: 6,
-    other: 7
+		annual_leave: 1,
+    training: 2,
+		illness: 3,
+		study_leave: 4,
+    maternity: 5,
+    paternity: 6,
+    unpaid: 7,
+    other: 8
 	}
 
 	enum approval: [:pending, :approved, :declined]
