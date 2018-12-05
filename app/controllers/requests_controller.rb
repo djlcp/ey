@@ -9,17 +9,19 @@ class RequestsController < ApplicationController
   end
 
   def new
-  	@request = Request.new
+    type_param = params[:type]
+    leave_type = type_param if type_param.in?(Request.leave_types.keys)
+  	@request = Request.new(leave_type: leave_type)
   end
 
   def create
   	@request = current_user.requests.new(request_params)
    	if @request.save
-      UserNotifierMailer.leave_request_cm_email(
-        user: current_user,
-        recipient: current_user.manager,
-        request: @request
-      ).deliver_now
+      # UserNotifierMailer.leave_request_cm_email(
+      #   user: current_user,
+      #   recipient: current_user.manager,
+      #   request: @request
+      # ).deliver_now
       # UserNotifierMailer.leave_request_cm_email().deliver_now
 
       # leave_request_cm_email(request.current_user.manager)

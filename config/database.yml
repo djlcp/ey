@@ -30,5 +30,5 @@ production:
   <<: *default
   encoding: utf8
   username: root
-  password: <%= ENV['RDS_PASSWORD'] %>
+  password: L0gitechnicals
   database: projectey

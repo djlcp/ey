@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :requests, dependent: :destroy
   # acts_as_paranoid
   # Include default devise modules.
-  # devise :invitable, :database_authenticatable, :registerable, :recoverable
+  # devise :registerable, :recoverable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
