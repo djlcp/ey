@@ -16,7 +16,10 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to "View User", hr_user_path(user), class: 'button button--small' %></td>
+        <td>
+          <%= link_to "View User", hr_user_path(user), class: 'button button--small' %>
+          <%= link_to "Delete", hr_user_path(user), class: 'button button--small button--danger', method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+        </td>
       </tr>
     <% end %>
     </tbody>

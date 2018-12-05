@@ -1,4 +1,6 @@
 @import "toastr";
+@import 'selectize';
+@import 'selectize.bootstrap3';
 
 @import 'vendor/scss/mixins';
 @import 'vendor/scss/variables';
@@ -24,4 +26,5 @@
 @import 'base/typography';
 @import 'button';
 
+@import 'alerts';
 @import 'containers';

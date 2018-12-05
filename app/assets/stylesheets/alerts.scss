@@ -1,0 +1,49 @@
+$color-list: (
+  error: #EF634A,
+  warning: #FFC526,
+  success: #5FC579,
+  info: #4D9DE0
+);
+
+.alert {
+  box-shadow: 0px 1px 4px 0px rgba(85,85,85,0.3);
+  position: relative;
+  padding: 25px;
+  background-color: #FFF;
+  border-radius: 5px;
+  width: 100%;
+  color: $mortar;
+  text-align: left;
+  margin-top: 2em;
+  z-index: 1;
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+    // Span with close button will always be last in the alert div
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .alert__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 1.3;
+    li {
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+.alert:last-of-type {
+  margin-bottom: 0;
+}
+
+@each $colorname, $color in $color-list {
+  .alert--#{$colorname} {
+    border-left: 5px solid $color;
+  }
+}

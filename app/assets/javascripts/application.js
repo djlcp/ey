@@ -19,6 +19,7 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require toastr
+//= require selectize
 
 // VENDOR JS (FILES COPIED INTO PROJECT)
 //= vendor/scrollreveal
@@ -29,6 +30,9 @@
 
 // TOASTR FOR ALERTS
 //= require init-toaster
+
+// SELECTIZE
+//= require init-selectize
 
 // COLLAPSABLE NAVBAR
 //= require collapsable-navbar
