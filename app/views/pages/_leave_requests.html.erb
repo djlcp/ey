@@ -1,0 +1,104 @@
+<section id="leave">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Leave Requests</h2>
+        <%= link_to 'New Leave Request', new_request_path, class: "btn btn-light btn-xl js-scroll-trigger" %>
+        <hr class="my-4">
+      </div>
+    </div>
+  </div>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if current_user.requests.blank? %>
+                <tr>
+                  <td>You currently have no change requests</td>
+                </tr>
+              <% else %>
+                <% current_user.requests.each do |request| %>
+                  <tr>
+                    <td><%= request.description %></td>
+                    <td><%= request.start %></td>
+                    <td><%= request.end %></td>
+                    <%- if request.pending? %>
+                          <td class="table-warning"> Pending </td>
+                      <% elsif request.approved? %>
+                          <td class="table-success"> Approved </td>
+                      <% else request.declined? %>
+                          <td class="table-danger"> Declined </td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+       <div class="col-12">
+         <div class="container">
+          <div class="row">
+            <%= render 'leave_request',
+              title: 'Annual Leave',
+              icon: 'fa-sun',
+              link: new_request_path(type: 'annual_leave'),
+              link_text: 'Request'
+            %>
+
+           <%= render 'leave_request',
+              title: 'Training Leave',
+              icon: 'fa-train',
+              link: new_request_path(type: 'annual_leave'),
+              link_text: 'Request'
+            %>
+             <%= render 'leave_request',
+              title: 'Study Leave',
+              icon: 'fa-book-open',
+              link: new_request_path(type: 'training'),
+              link_text: 'Request'
+            %>
+             <%= render 'leave_request',
+              title: 'Sick Leave',
+              icon: 'fa-user-md',
+              link: new_request_path(type: 'study_leave'),
+              link_text: 'Register'
+            %>
+             <%= render 'leave_request',
+              title: 'Maternity leave',
+              icon: 'fa-child',
+              link: new_request_path(type: 'maternity'),
+              link_text: 'Register'
+            %>
+             <%= render 'leave_request',
+              title: 'Paternity leave',
+              icon: 'fa-child',
+              link: new_request_path(type: 'paternity'),
+              link_text: 'Register'
+            %>
+             <%= render 'leave_request',
+              title: 'Unpaid Leave',
+              icon: 'fa-hiking',
+              link: new_request_path(type: 'unpaid'),
+              link_text: 'Request'
+            %>
+             <%= render 'leave_request',
+              title: 'Other Leave',
+              icon: 'fa-calendar-alt',
+              link: new_request_path(type: 'other'),
+              link_text: 'Request'
+            %>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

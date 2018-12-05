@@ -1,0 +1,37 @@
+.table td {vertical-align: middle;}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+#kontainer {
+	padding-top:6em;
+}
+
+.btn-admin {
+	background-color: #FFDB00;
+	color: #212529;
+	border-color: #FFDB00;
+}
+
+.btn-admin:hover {
+	color: #212529!important;
+	border-color: #c7c7c7;
+}
+
+.notice, .alert {
+    position: absolute;
+    background: #4dab26;
+    padding: 0;
+    z-index: 2000;
+    margin-top: 3.5em;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.alert {background: #d34852;}

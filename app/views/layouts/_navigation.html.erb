@@ -1,0 +1,42 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <%= link_to 'EY - Time Manager', root_path, class: "navbar-brand js-scroll-trigger" %>
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+              <%= link_to 'Profile', edit_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#calendar">Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#leave">Leave</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#opportunities">Opportunities</a>
+          </li>
+          <% if current_user.admin? || current_user.hr? %>
+            <li class="nav-item">
+              <%= link_to 'HR Panel', hr_users_path, class: "nav-link js-scroll-trigger" %>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>

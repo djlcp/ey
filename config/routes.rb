@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'calendar', to: 'pages#calendar'
 
-  # get 'admin', to: 'admin#index'
+ 
+  get 'admin', to: 'hr/users#index'
 
   namespace :hr do
   	resources :users

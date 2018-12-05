@@ -39,6 +39,10 @@ class UsersController < ApplicationController
   end
 end
 
+  def index
+    @user = User.find(params[:id])
+  end
+
 # When leave has councellor and manager approval,
 # send the approval mail to (1) manager and (2) counsellor
 
