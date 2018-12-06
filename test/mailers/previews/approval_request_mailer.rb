@@ -1,5 +1,5 @@
-# Preview all emails at http://localhost:3000/rails/mailers/user_notifier_mailer
-class UserNotifierMailerPreview < ActionMailer::Preview
+# Preview all emails at http://localhost:3000/rails/mailers/approval_request_mailer
+class ApprovalRequestMailerPreview < ActionMailer::Preview
   def request_approval
     ApprovalRequestMailer.request_approval(
       user: User.new(first_name: 'Test', last_name: 'User'),

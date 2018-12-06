@@ -1,32 +1,33 @@
 <div class="container" id="kontainer">
 
+  <h2>New Leave Request</h2>
+
   <%= form_with model: @request, local: true do |f| %>
 
     <% if @request.errors.present? %>
-      <%= @request.errors.full_messages.to_sentence %>
+      <%= render 'shared/errors', model: @request %>
     <% end %>
-<div class="form-row">
-    <div class="field form-group col-md-4">
-      <%#= f.input :leave_type, as: :radio_buttons,
-        collection: ['Sick Leave', 'Annual Leave', 'Study Leave'] %>
-      <%= f.label :leave_type %>
-      <div>
-        <%= f.select :leave_type, Request::LEAVE_TYPES, {}, { class: "form-control" } %>
+
+    <div class="form-row">
+      <div class="field form-group col-md-4">
+        <%= f.label :leave_type %>
+        <div>
+          <%= f.select :leave_type, Request.leave_types.keys.map { |type| [type.humanize, type] }, { prompt: true }, { class: "form-control" } %>
+        </div>
+      </div>
+      <div class="field form-group col-md-4">
+        <%= f.label :start %>
+        <div class="cal-style">
+          <%= f.date_field :start, class: "form-control" %>
+        </div>
+      </div>
+      <div class="field form-group col-md-4">
+        <%= f.label :end %>
+        <div class="cal-style">
+          <%= f.date_field :end, class: "form-control" %>
+        </div>
       </div>
     </div>
-    <div class="field form-group col-md-4">
-      <%= f.label :start %>
-      <div class="cal-style">
-        <%= f.date_field :start, class: "form-control" %>
-      </div>
-    </div>
-    <div class="field form-group col-md-4">
-      <%= f.label :end %>
-      <div class="cal-style">
-        <%= f.date_field :end, class: "form-control" %>
-      </div>
-    </div>
-</div>
     <div class="field form-group">
       <%= f.label :description %>
       <%= f.text_field :description, class: 'form-control'%>

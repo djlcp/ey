@@ -20,3 +20,18 @@
     text-decoration: none;
   }
 }
+
+.button--small {
+  padding: 0.5em 1.4em;
+  font-size: 0.8rem;
+}
+
+.button--danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+  &:hover {
+    background-color: darken(#dc3545, 10%);
+    color: white;
+  }
+}
