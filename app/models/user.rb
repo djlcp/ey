@@ -37,6 +37,20 @@ class User < ApplicationRecord
     request.approval_requests.find_by(approver: self)
   end
 
+  def request_overlaps?(request)
+    overlapping_requests(request).present?
+  end
+
+  def overlapping_requests(request)
+    managed_user_requests.joins(:user).where(
+      'start >= :start_date AND end <= :end_date',
+      start_date: request.start,
+      end_date: request.end
+    ).where(
+      users: { manager_id: self.id }
+    ).where.not(id: request.id)
+  end
+
   def send_request_approval_emails(request)
     %w[manager counsellor].each do |type|
       approval_request = send(type).approval_requests.create(request: request)
