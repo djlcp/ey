@@ -1,0 +1,7 @@
+<div class="custom-alert custom-alert--error">
+  <ul class="custom-alert__list">
+    <% model.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>

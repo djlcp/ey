@@ -2,31 +2,32 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Leave Requests</h2>
+        <h2 class="section-heading">Your Leave Requests</h2>
+        <%= link_to 'New Leave Request', new_request_path, class: "btn btn-light btn-xl js-scroll-trigger" %>
         <hr class="my-4">
       </div>
     </div>
   </div>
-
-  <div class="container">
+   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <table class="table table-striped">
+        <table class="table table-striped mb-5">
             <thead>
               <tr>
                 <th>Description</th>
                 <th>Start</th>
                 <th>End</th>
                 <th>Status</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               <% if current_user.requests.blank? %>
                 <tr>
-                  <td>You currently have no change requests</td>
+                  <td colspan="5">You currently have no leave requests</td>
                 </tr>
               <% else %>
-                <% current_user.requests.each do |request| %>
+                <% current_user.requests.kept.each do |request| %>
                   <tr>
                     <td><%= request.description %></td>
                     <td><%= request.start %></td>
@@ -38,86 +39,70 @@
                       <% else request.declined? %>
                           <td class="table-danger"> Declined </td>
                     <% end %>
+                    <td style="text-align: center">
+                      <% unless request.start <= Time.current %>
+                        <%= link_to 'Delete', request_path(request), method: :delete, data: { confirm: 'Are you sure you want to delete this request?' }, class: 'button button--danger' %>
+                      <% end %>
+                    </td>
                   </tr>
                 <% end %>
               <% end %>
             </tbody>
           </table>
       </div>
-
-      <div class="col-12">
+       <div class="col-12">
          <div class="container">
           <div class="row">
             <%= render 'leave_request',
               title: 'Annual Leave',
               icon: 'fa-sun',
-              link: '#',
-              link_text: 'Request annual leave'
+              link: new_request_path(type: 'annual_leave'),
+              link_text: 'Request'
             %>
 
-            <%= render 'leave_request',
+           <%= render 'leave_request',
               title: 'Training Leave',
               icon: 'fa-train',
-              link: '#',
-              link_text: 'Request training leave'
+              link: new_request_path(type: 'training'),
+              link_text: 'Request'
             %>
-
-            <%= render 'leave_request',
+             <%= render 'leave_request',
               title: 'Study Leave',
               icon: 'fa-book-open',
-              link: '#',
-              link_text: 'Request study leave'
+              link: new_request_path(type: 'study_leave'),
+              link_text: 'Request'
             %>
-
-            <%= render 'leave_request',
+             <%= render 'leave_request',
               title: 'Sick Leave',
               icon: 'fa-user-md',
-              link: '#',
-              link_text: 'Log sick leave'
+              link: new_request_path(type: 'illness'),
+              link_text: 'Request'
             %>
-
-            <%= render 'leave_request',
+             <%= render 'leave_request',
               title: 'Maternity leave',
               icon: 'fa-child',
-              link: '#',
-              link_text: 'Register maternity leave'
+              link: new_request_path(type: 'maternity'),
+              link_text: 'Request'
             %>
-
-            <%= render 'leave_request',
+             <%= render 'leave_request',
               title: 'Paternity leave',
               icon: 'fa-child',
-              link: '#',
-              link_text: 'Register paternity leave'
+              link: new_request_path(type: 'paternity'),
+              link_text: 'Request'
             %>
-
-            <%= render 'leave_request',
+             <%= render 'leave_request',
               title: 'Unpaid Leave',
               icon: 'fa-hiking',
-              link: '#',
-              link_text: 'Request unpaid leave'
+              link: new_request_path(type: 'unpaid'),
+              link_text: 'Request'
             %>
-
-            <%= render 'leave_request',
+             <%= render 'leave_request',
               title: 'Other Leave',
               icon: 'fa-calendar-alt',
-              link: '#',
-              link_text: 'Request other leave'
+              link: new_request_path(type: 'other'),
+              link_text: 'Request'
             %>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-primary" id="profile">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="container">
-          <h2>Leave Requests</h2>
-
+           </div>
         </div>
       </div>
     </div>

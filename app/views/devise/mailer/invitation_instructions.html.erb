@@ -1,11 +1,17 @@
-<p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
-
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
-
-<p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
-
-<% if @resource.invitation_due_at %>
-  <p><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :'devise.mailer.invitation_instructions.accept_until_format')) %></p>
+<%= mailer_paragraph do %>
+  Hello <%= @resource.full_name %>
 <% end %>
 
-<p><%= t("devise.mailer.invitation_instructions.ignore") %></p>
+<%= mailer_paragraph do %>
+  You have been invited to join EYTime.net. Please click the link below to set your password and login.
+<% end %>
+
+<%= mailer_button('Accept Invitation', accept_invitation_url(@resource, :invitation_token => @token)) %>
+
+<%= mailer_spacer %>
+
+<%= mailer_paragraph do %>
+  If you don't want to accept the invitation, please ignore this e-mail.
+  Your account won't be created until you access the link above and set your password.
+<% end %>
+

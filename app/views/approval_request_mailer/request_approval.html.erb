@@ -1,0 +1,22 @@
+<%= mailer_paragraph do %>
+  Dear <%= @recipient.full_name %>,
+<% end %>
+
+<%= mailer_paragraph do %>
+  <%= @user.full_name %> has requested leave as below. Please click the link at the bottom of this e-mail to provide your review.
+<% end %>
+
+<%= mailer_paragraph do %>
+  <ul>
+    <li>Type of Leave: <%= @request.leave_type.humanize %></li>
+    <li>Duration: <%= @request.start %> to <%= @request.end %></li>
+  </ul>
+<% end %>
+
+<%= mailer_spacer %>
+
+<%= mailer_button('Approve Request', '#', 'center') %>
+
+<%= mailer_divider %>
+
+<%= mailer_error_button('Reject Request', '#', 'center') %>

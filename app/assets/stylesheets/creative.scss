@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
  */
 
- 
+
 
 body,
 html {
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  // font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
 hr {
@@ -58,7 +58,8 @@ background-color:blue;
 }
 
 section {
-  padding: 8rem 0;
+  margin: 3rem 0;
+  padding: 0;
 }
 
 .section-heading {
