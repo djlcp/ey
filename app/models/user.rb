@@ -41,8 +41,8 @@ class User < ApplicationRecord
     end
   end
 
-  def self.for_select
-    all_except(current_user).map { |user| [user.full_name, user.id] }
+  def self.for_select(user)
+    all_except(user).map { |user| [user.full_name, user.id] }
   end
 
   after_initialize do

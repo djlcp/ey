@@ -18,11 +18,11 @@
   	</div>
 
     <div class="form-group">
-      <%= f.select :manager_id, User.for_select, { prompt: true }, { class: 'js-selectize' } %>
+      <%= f.select :manager_id, User.for_select(current_user), { prompt: true }, { class: 'js-selectize' } %>
     </div>
 
     <div class="form-group">
-      <%= f.select :counsellor_id, User.for_select, { prompt: true }, { class: 'js-selectize' } %>
+      <%= f.select :counsellor_id, User.for_select(current_user), { prompt: true }, { class: 'js-selectize' } %>
     </div>
 
 		 <div class="form-group">

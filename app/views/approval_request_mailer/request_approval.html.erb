@@ -15,7 +15,7 @@
 
 <%= mailer_spacer %>
 
-<%= mailer_button('Approve Request', '#', 'center') %>
+<%= mailer_button('Approve Request', accept_url(token: @approval_request.token), 'center') %>
 
 <%= mailer_divider %>
 
