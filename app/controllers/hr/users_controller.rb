@@ -26,6 +26,7 @@ class Hr::UsersController < ApplicationController
   end
 
   private
+
   def is_hr?
     unless current_user.admin? || current_user.hr?
       redirect_to root_url, alert: 'Access Denied'

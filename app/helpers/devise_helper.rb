@@ -9,8 +9,8 @@ module DeviseHelper
     )
 
     html = <<-HTML
-    <div id="error_explanation" class="alert alert--error">
-      <ul class="alert__list">#{messages}</ul>
+    <div id="error_explanation" class="custom-alert custom-alert--error">
+      <ul class="custom-alert__list">#{messages}</ul>
     </div>
     HTML
 

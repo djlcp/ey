@@ -78,3 +78,10 @@ input {
   padding: 6px 3px 6px 10px;
   box-shadow: none;
 }
+
+.is-valid {
+  border: 1px solid #ced4da !important;
+  &:focus {
+    border-color: #ffc107;
+  }
+}

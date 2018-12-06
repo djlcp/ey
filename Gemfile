@@ -75,6 +75,7 @@ gem 'momentjs-rails'
 
 # JQuery
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Running a JS runtime from Ruby (need to run on the web server)
 gem 'mini_racer'
@@ -83,4 +84,4 @@ gem 'mini_racer'
 gem 'awesome_print'
 
 # For pretty select boxes
-gem "selectize-rails"
+gem 'selectize-rails'

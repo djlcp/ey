@@ -41,6 +41,10 @@ class User < ApplicationRecord
     end
   end
 
+  def self.for_select
+    all_except(current_user).map { |user| [user.full_name, user.id] }
+  end
+
   after_initialize do
     self.role ||= :standard if new_record?
   end
