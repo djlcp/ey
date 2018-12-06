@@ -32,3 +32,11 @@ production:
   username: root
   password: <%= ENV['RDS_PASSWORD'] %>
   database: projectey
+
+
+development:
+adapter: mysql2
+database: mydb
+host: localhost
+username: root
+password: "mypassword" 
