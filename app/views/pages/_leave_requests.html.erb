@@ -63,32 +63,32 @@
            <%= render 'leave_request',
               title: 'Training Leave',
               icon: 'fa-train',
-              link: new_request_path(type: 'annual_leave'),
+              link: new_request_path(type: 'training'),
               link_text: 'Request'
             %>
              <%= render 'leave_request',
               title: 'Study Leave',
               icon: 'fa-book-open',
-              link: new_request_path(type: 'training'),
+              link: new_request_path(type: 'study_leave'),
               link_text: 'Request'
             %>
              <%= render 'leave_request',
               title: 'Sick Leave',
               icon: 'fa-user-md',
-              link: new_request_path(type: 'study_leave'),
-              link_text: 'Register'
+              link: new_request_path(type: 'illness'),
+              link_text: 'Request'
             %>
              <%= render 'leave_request',
               title: 'Maternity leave',
               icon: 'fa-child',
               link: new_request_path(type: 'maternity'),
-              link_text: 'Register'
+              link_text: 'Request'
             %>
              <%= render 'leave_request',
               title: 'Paternity leave',
               icon: 'fa-child',
               link: new_request_path(type: 'paternity'),
-              link_text: 'Register'
+              link_text: 'Request'
             %>
              <%= render 'leave_request',
               title: 'Unpaid Leave',
