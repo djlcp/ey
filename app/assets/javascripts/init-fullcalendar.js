@@ -24,13 +24,13 @@ $(document).on('turbolinks:load', function() {
          prevYear: new moment().year() - 1,
          nextYear: new moment().year() + 1
       },
-      minTime: "07:00:00",
-      maxTime: "19:00:00",// shows time for weeks and days
-      /*viewRender: function (view) {
+      minTime: "09:00:00",
+      maxTime: "18:00:00",// shows time for weeks and days
+      viewRender: function (view) {
         var y = moment($('#calendar').fullCalendar('getDate')).year();
         $(".fc-prevYear-button").text(y - 1);
         $(".fc-nextYear-button").text(y + 1);
-      }*/
+      },
 
       weekNumbers: true, // shows week count
       eventLimit: true, // allow "more" link when too many events
