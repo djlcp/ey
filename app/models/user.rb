@@ -29,6 +29,28 @@ class User < ApplicationRecord
     first_name + ' ' + last_name
   end
 
+  def managed_user_requests
+    Request.kept.where(id: managed_users.map { |user| user.requests.ids }.flatten)
+  end
+
+  def approval_request_for(request)
+    request.approval_requests.find_by(approver: self)
+  end
+
+  def request_overlaps?(request)
+    overlapping_requests(request).present?
+  end
+
+  def overlapping_requests(request)
+    managed_user_requests.joins(:user).where(
+      'start >= :start_date AND end <= :end_date',
+      start_date: request.start,
+      end_date: request.end
+    ).where(
+      users: { manager_id: self.id }
+    ).where.not(id: request.id)
+  end
+
   def send_request_approval_emails(request)
     %w[manager counsellor].each do |type|
       approval_request = send(type).approval_requests.create(request: request)
@@ -41,8 +63,21 @@ class User < ApplicationRecord
     end
   end
 
+  def send_request_revoked_emails(request)
+    %w[manager counsellor].each do |type|
+      ApprovalRequestMailer.request_revoked(
+        recipient: send(type),
+        request: request
+      ).deliver_now
+    end
+    ApprovalRequestMailer.request_successfully_revoked(
+      user: self,
+      request: request
+    ).deliver_now
+  end
+
   def self.for_select(user)
-    all_except(user).map { |user| [user.full_name, user.id] }
+    all.map { |user| [user.full_name, user.id] }
   end
 
   after_initialize do

@@ -1,4 +1,5 @@
 class Request < ApplicationRecord
+  include Discard::Model
   enum leave_type: {
     annual_leave: 1,
     training: 2,
@@ -17,9 +18,21 @@ class Request < ApplicationRecord
 
   validates(:end, :start, :leave_type, presence: true)
 
-	# has_secure_token
+  validates_date :start, after: -> { Date.today }
+  validate :end_date_after_start
+
+  def end_date_after_start
+    return unless start && self.end
+    return unless self.end < start
+
+    errors.add(:end, 'date must be before the start date')
+  end
 
   def as_event
     { title: description, end: self.end, start: start }
+  end
+
+  after_discard do
+    user.send_request_revoked_emails(self)
   end
 end

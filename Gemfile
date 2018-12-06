@@ -85,3 +85,9 @@ gem 'awesome_print'
 
 # For pretty select boxes
 gem 'selectize-rails'
+
+# For validation times
+gem 'validates_timeliness'
+
+# Soft deleting
+gem 'discard'

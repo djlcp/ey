@@ -30,8 +30,7 @@ class UserNotifierMailer < ApplicationMailer
 
   def leave_revoked_email(user)
     @user = user
-    mail( :to => @request.user.email,
-    :subject => 'You have successfully revoked your leave request' )
+    mail(to: @request.user.email, subject: 'You have successfully revoked your leave request' )
   end
 
   # inform counsellor of leave revoked
