@@ -11,4 +11,7 @@ class Request < ApplicationRecord
 
 	validates(:end, :start, :leave_type, presence: true)
 
+	# has_secure_token
+
+
 end

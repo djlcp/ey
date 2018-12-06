@@ -13,8 +13,8 @@ class RequestsController < ApplicationController
   def create
   	@request = Request.new(request_params.merge(user: current_user))
   	if @request.save
-  		leave_request_cm_email(request.current_user.manager)
-  		leave_request_cm_email(current_user.counsellor)
+  		# leave_request_cm_email(request.current_user.manager)
+  		# leave_request_cm_email(current_user.counsellor)
   		redirect_to root_path
   	else
   		render :new
