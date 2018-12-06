@@ -17,10 +17,18 @@
 	  </div>
 
 	  <div class="form-group">
+	  	<%= f.label :manager_id %>
+	  	<%= f.collection_select :manager_id, User.all_except(current_user), :id, :full_name, { prompt: true }, { class: 'js-selectize' } %>
+	  </div>
+
+	  <div class="form-group">
+	  	<%= f.label :counsellor_id %>
+	  	<%= f.collection_select :counsellor_id, User.all_except(current_user), :id, :full_name, { prompt: true }, { class: 'js-selectize' } %>
+	  </div>
+
+	  <div class="form-group">
 	  	<%= f.label :role %>
-	  	<div class="select-style">
-			<%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] } %>
-	  	</div>
+			<%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] }, { prompt: true }, class: 'js-selectize' %>
 	  </div>
 
 	  <div class="form-group">

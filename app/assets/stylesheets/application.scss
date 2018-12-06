@@ -1,4 +1,7 @@
 @import "toastr";
+@import 'selectize';
+@import 'selectize.bootstrap3';
+@import 'jquery-ui';
 
 @import 'vendor/scss/mixins';
 @import 'vendor/scss/variables';
@@ -15,7 +18,6 @@
 @import 'vendor/scss/masthead';
 @import 'vendor/scss/navbar';
 
-
 @import 'bootstrap';
 @import 'adminpanel';
 @import 'forms';
@@ -24,4 +26,5 @@
 @import 'base/typography';
 @import 'button';
 
+@import 'alerts';
 @import 'containers';

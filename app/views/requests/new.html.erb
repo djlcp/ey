@@ -5,8 +5,9 @@
   <%= form_with model: @request, local: true do |f| %>
 
     <% if @request.errors.present? %>
-      <%= @request.errors.full_messages.to_sentence %>
+      <%= render 'shared/errors', model: @request %>
     <% end %>
+
     <div class="form-row">
       <div class="field form-group col-md-4">
         <%= f.label :leave_type %>
