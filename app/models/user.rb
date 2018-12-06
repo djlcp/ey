@@ -29,6 +29,14 @@ class User < ApplicationRecord
     first_name + ' ' + last_name
   end
 
+  def managed_user_requests
+    Request.kept.where(id: managed_users.map { |user| user.requests.ids }.flatten)
+  end
+
+  def approval_request_for(request)
+    request.approval_requests.find_by(approver: self)
+  end
+
   def send_request_approval_emails(request)
     %w[manager counsellor].each do |type|
       approval_request = send(type).approval_requests.create(request: request)
@@ -41,8 +49,21 @@ class User < ApplicationRecord
     end
   end
 
-  def self.for_select
-    all_except(current_user).map { |user| [user.full_name, user.id] }
+  def send_request_revoked_emails(request)
+    %w[manager counsellor].each do |type|
+      ApprovalRequestMailer.request_revoked(
+        recipient: send(type),
+        request: request
+      ).deliver_now
+    end
+    ApprovalRequestMailer.request_successfully_revoked(
+      user: self,
+      request: request
+    ).deliver_now
+  end
+
+  def self.for_select(user)
+    all.map { |user| [user.full_name, user.id] }
   end
 
   after_initialize do

@@ -14,15 +14,18 @@
 		</div>
 
   	<div class="form-group">
+      <%= f.label :role %>
 			<%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] }, {}, class: 'js-selectize' %>
   	</div>
 
     <div class="form-group">
-      <%= f.select :manager_id, User.for_select, { prompt: true }, { class: 'js-selectize' } %>
+      <%= f.label :manager_id %>
+      <%= f.select :manager_id, User.for_select(current_user), { prompt: true }, { class: 'js-selectize' } %>
     </div>
 
     <div class="form-group">
-      <%= f.select :counsellor_id, User.for_select, { prompt: true }, { class: 'js-selectize' } %>
+      <%= f.label :counsellor_id %>
+      <%= f.select :counsellor_id, User.for_select(current_user), { prompt: true }, { class: 'js-selectize' } %>
     </div>
 
 		 <div class="form-group">

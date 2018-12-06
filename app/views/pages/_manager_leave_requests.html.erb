@@ -1,0 +1,58 @@
+<section id="leave">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Your Team's Leave Requests</h2>
+        <hr class="my-4">
+      </div>
+    </div>
+  </div>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped mb-5">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Description</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if current_user.managed_user_requests.blank? %>
+                <tr>
+                  <td colspan="5">There are currently no leave requests</td>
+                </tr>
+              <% else %>
+                <% current_user.managed_user_requests.each do |request| %>
+                  <% approval_request = current_user.approval_request_for(request) %>
+                  <tr>
+                    <td><%= request.user.full_name %></td>
+                    <td><%= request.description %></td>
+                    <td><%= request.start %></td>
+                    <td><%= request.end %></td>
+                    <%- if approval_request.awaiting_review? %>
+                          <td class="table-warning"> Awaiting Review </td>
+                      <% elsif approval_request.approved? %>
+                          <td class="table-success"> Approved </td>
+                      <% else approval_request.rejected? %>
+                          <td class="table-danger"> Rejected </td>
+                    <% end %>
+                    <td style="text-align: center">
+                      <% if approval_request.awaiting_review? %>
+                        <%= link_to 'Approve', approval_request_approve_path(approval_request), method: :post, class: 'button button--small', data: { confirm: 'Are you sure you want to approve this request?' } %>
+                        <%= link_to 'Reject', approval_request_reject_path(approval_request), method: :post, class: 'button button--danger button--small', data: { confirm: 'Are you sure you want to reject this request?' } %>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>

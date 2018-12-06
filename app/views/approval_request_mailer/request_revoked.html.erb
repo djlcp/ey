@@ -3,20 +3,13 @@
 <% end %>
 
 <%= mailer_paragraph do %>
-  <%= @user.full_name %> has requested leave as below. Please click the link at the bottom of this email to provide your review.
+  <%= @request.user.full_name %> has revoked the leave request detailed below.
 <% end %>
 
 <%= mailer_paragraph do %>
   <ul>
     <li>Type of leave: <%= @request.leave_type.humanize %></li>
     <li>Duration: <%= @request.start %> to <%= @request.end %></li>
+    <li>Description: <%= @request.description %> </li>
   </ul>
 <% end %>
-
-<%= mailer_spacer %>
-
-<%= mailer_button('Approve Request', '#', 'center') %>
-
-<%= mailer_divider %>
-
-<%= mailer_error_button('Reject Request', '#', 'center') %>

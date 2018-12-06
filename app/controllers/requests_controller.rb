@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show]
+  before_action :authenticate_user!
+  before_action :set_request, only: [:show, :destroy]
 
   def index
     @requests = Request.all
@@ -25,6 +26,11 @@ class RequestsController < ApplicationController
   end
 
   def show; end
+
+  def destroy
+    @request.discard
+    redirect_to root_path(anchor: 'leave'), success: 'Request successfully deleted'
+  end
 
   private
 
