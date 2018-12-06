@@ -11,18 +11,18 @@
 // about supported directives.
 //
 // JS FROM GEMS
+//= require jquery
+//= require jquery-ui
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery
-//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
 //= require moment
 //= require toastr
+//= require selectize
 
 // VENDOR JS (FILES COPIED INTO PROJECT)
-//= vendor/jquery.magnific-popup
 //= vendor/scrollreveal
 
 // FULL CALENDAR
@@ -31,6 +31,9 @@
 
 // TOASTR FOR ALERTS
 //= require init-toaster
+
+// SELECTIZE
+//= require init-selectize
 
 // COLLAPSABLE NAVBAR
 //= require collapsable-navbar

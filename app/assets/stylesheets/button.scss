@@ -1,5 +1,4 @@
 .button {
-  // font-family: "EuclidFlex", "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 1rem;
   max-width: 100%;
   padding: 0.7em 2em;
@@ -19,5 +18,20 @@
     color: $mortar;
     background-color: darken($theme-color, 10%);
     text-decoration: none;
+  }
+}
+
+.button--small {
+  padding: 0.5em 1.4em;
+  font-size: 0.8rem;
+}
+
+.button--danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+  &:hover {
+    background-color: darken(#dc3545, 10%);
+    color: white;
   }
 }

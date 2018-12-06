@@ -66,9 +66,22 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+# Authentication
 gem 'devise'
 gem 'devise_invitable'
+
+# JS date manipulation
 gem 'momentjs-rails'
 
+# JQuery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+# Running a JS runtime from Ruby (need to run on the web server)
+gem 'mini_racer'
+
+# For debugging
+gem 'awesome_print'
+
+# For pretty select boxes
+gem 'selectize-rails'

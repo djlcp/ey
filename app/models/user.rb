@@ -1,44 +1,51 @@
-# users model created by Richard 30.10.18 as a test for csv output
-# need to test this Needs a users data set before this will work
 class User < ApplicationRecord
   has_many :requests, dependent: :destroy
-  # acts_as_paranoid
-  # Include default devise modules.
-  # devise :invitable, :database_authenticatable, :registerable, :recoverable
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, validate_on_invite: true
 
-  validates :email, presence: true
+  validates(
+    :email,
+    :manager,
+    :counsellor,
+    :first_name,
+    :last_name,
+    presence: true
+  )
+
   enum role: %i[standard hr manager]
 
-  # below some active record assocation examples variables not yet confirmed
+  # Each user has a manager and a counsellor
+  belongs_to :manager, class_name: 'User'
+  belongs_to :counsellor, class_name: 'User'
+
+  has_many :approval_requests, foreign_key: :approver_id
+  # Each user can be the manager or counsellor of many users
+  has_many :managed_users, foreign_key: :manager_id, class_name: 'User'
+  has_many :couselled_users, foreign_key: :counsellor_id, class_name: 'User'
+
+  scope :all_except, ->(user) { where.not(id: user.id) }
+
+  def full_name
+    first_name + ' ' + last_name
+  end
+
+  def send_request_approval_emails(request)
+    %w[manager counsellor].each do |type|
+      approval_request = send(type).approval_requests.create(request: request)
+      ApprovalRequestMailer.request_approval(
+        user: self,
+        recipient: send(type),
+        request: request,
+        approval_request: approval_request
+      ).deliver_now
+    end
+  end
+
+  def self.for_select
+    all_except(current_user).map { |user| [user.full_name, user.id] }
+  end
 
   after_initialize do
     self.role ||= :standard if new_record?
-  end
-
-  def self.assign_from_row(row)
-    user = User.where(email: row[:email]).first_or_initialize
-    user.assign_attributes row.to_hash.slice(:first_name, :last_name)
-  end
-
-  # this includes headers
-  # database items need to match the array
-
-  def self.to_csv(options = {})
-    attributes = %w[id email first_name last_name]
-
-    # HOW TO GET BOTH 'OPTIONS' and 'HEADERS?'
-    CSV.generate(options, headers: true) do |csv|
-      csv << attributes
-
-      User.all.each do |user|
-        attributes.each do |att|
-          csv << user.send(att)
-        end
-      end
-    end
   end
 end
