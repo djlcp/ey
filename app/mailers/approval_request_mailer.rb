@@ -18,4 +18,18 @@ class ApprovalRequestMailer < ApplicationMailer
     @request = request
     mail(to: @user.email, subject: 'Request revoked')
   end
+
+  def request_approved(user:, approval_request:)
+    @user = user
+    @request = approval_request.request
+    @approval_request = approval_request
+    mail(to: @user.email, subject: 'Leave request approved')
+  end
+
+  def request_rejected(user:, approval_request:)
+    @user = user
+    @request = approval_request.request
+    @approval_request = approval_request
+    mail(to: @user.email, subject: 'Leave request rejected')
+  end
 end

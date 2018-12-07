@@ -8,4 +8,20 @@ class ApprovalRequest < ApplicationRecord
 
   belongs_to :request
   belongs_to :approver, class_name: 'User'
+
+  after_update :update_request
+
+  def update_request
+    return unless approved? || rejected?
+
+    if approved?
+      if request.approval_requests.all? { |approval_request| approval_request.approved? }
+        ApprovalRequestMailer.request_approved(user: request.user, approval_request: self).deliver_now
+        request.approved!
+      end
+    elsif rejected?
+      ApprovalRequestMailer.request_rejected(user: request.user, approval_request: self).deliver_now
+      request.declined!
+    end
+  end
 end

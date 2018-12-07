@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :destroy]
 
   def index
-    @requests = Request.all
+    @requests = Request.approved
     respond_to do |format|
       format.json { render :index }
     end
@@ -25,7 +25,6 @@ class RequestsController < ApplicationController
       render :new
     end
   end
-
 
   def show; end
 

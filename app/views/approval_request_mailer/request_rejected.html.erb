@@ -1,0 +1,14 @@
+<%= mailer_paragraph do %>
+  Dear <%= @user.first_name %>,
+<% end %>
+
+<%= mailer_paragraph do %>
+  The leave request detailed below has been rejected.
+<% end %>
+
+<%= mailer_paragraph do %>
+  <ul>
+    <li>Type of Leave: <%= @request.leave_type.humanize %></li>
+    <li>Duration: <%= @request.start %> to <%= @request.end %></li>
+  </ul>
+<% end %>
