@@ -12,7 +12,7 @@ class User < ApplicationRecord
     presence: true
   )
 
-  enum role: %i[standard hr manager]
+  enum role: { standard: 1, hr: 2 }
 
   # Each user has a manager and a counsellor
   belongs_to :manager, class_name: 'User'
@@ -21,9 +21,10 @@ class User < ApplicationRecord
   has_many :approval_requests, foreign_key: :approver_id
   # Each user can be the manager or counsellor of many users
   has_many :managed_users, foreign_key: :manager_id, class_name: 'User'
-  has_many :couselled_users, foreign_key: :counsellor_id, class_name: 'User'
+  has_many :counselled_users, foreign_key: :counsellor_id, class_name: 'User'
 
   scope :all_except, ->(user) { where.not(id: user.id) }
+  scope :managers, -> { where(is_manager: true) }
 
   def full_name
     first_name + ' ' + last_name
@@ -31,6 +32,13 @@ class User < ApplicationRecord
 
   def managed_user_requests
     Request.kept.where(id: managed_users.map { |user| user.requests.ids }.flatten)
+  end
+
+  def requests_for_approval
+    managed_user_request_ids = managed_users.map { |user| user.requests.ids }.flatten
+    counselled_users_request_ids = counselled_users.map { |user| user.requests.id }.flatten
+    Request.kept
+      .where(id: [managed_user_request_ids, counselled_users_request_ids].flatten )
   end
 
   def approval_request_for(request)
@@ -74,10 +82,6 @@ class User < ApplicationRecord
       user: self,
       request: request
     ).deliver_now
-  end
-
-  def self.for_select(user)
-    all.map { |user| [user.full_name, user.id] }
   end
 
   after_initialize do

@@ -1,32 +1,5 @@
-// Bootstrap overrides for this template
+// Overriding the bootstrap styles that we don't like
 
-.text-primary {
-  color: $primary !important;
-}
-
-.btn {
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 300px;
-  @include sans-serif-font;
-}
-
-.btn-xl {
-  padding: 1rem 2rem;
-}
-
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-  &:hover,
-  &:focus,
-  &:active {
-    color: $white;
-    background-color: darken($primary, 5%) !important;
-  }
-  &:active,
-  &:focus {
-    box-shadow: 0 0 0 0.2rem #ffe600 !important;
-  }
+.table td {
+  padding: 0.3rem 0.75rem !important;
 }

@@ -19,6 +19,7 @@ class RequestsController < ApplicationController
     @request = current_user.requests.new(request_params)
     if @request.save
       current_user.send_request_approval_emails(@request)
+      flash[:success] = 'Request successfully created'
       redirect_to root_path
     else
       render :new

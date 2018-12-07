@@ -20,22 +20,22 @@
 
     <div class="form-group">
       <%= f.label :manager_id %>
-      <%= f.select :manager_id, User.for_select(current_user), { prompt: true }, { class: 'js-selectize' } %>
+      <%= f.collection_select :manager_id, User.managers, :id, :full_name, { prompt: true }, { class: 'js-selectize' } %>
     </div>
 
     <div class="form-group">
       <%= f.label :counsellor_id %>
-      <%= f.select :counsellor_id, User.for_select(current_user), { prompt: true }, { class: 'js-selectize' } %>
+      <%= f.collection_select :counsellor_id, User.all, :id, :full_name, { prompt: true }, { class: 'js-selectize' } %>
     </div>
 
-		 <div class="form-group">
-    		<%= f.label :admin %>
-    		<%= f.check_box :admin %>
-  		</div>
+    <div class="form-group">
+      <%= f.label :admin %>
+      <%= f.check_box :admin %>
+    </div>
 
   		 <div class="form-group">
     		<%= f.label :join_date %>
-    		<%= f.date_field :join_date %>
+    		<%= f.text_field :join_date, class: 'js-datepicker', placeholder: 'DD-MM-YYYY' %>
   		</div>
 
 		<%= f.submit 'Update User', class: 'button' %>

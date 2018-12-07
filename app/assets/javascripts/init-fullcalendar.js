@@ -12,8 +12,8 @@ $(document).on('turbolinks:load', function() {
       },
       //CHANGE BUTTON TEXT FOR PREV,NEXT YEAR
       buttonText: {
-         prevYear: new moment().year() - 1,
-         nextYear: new moment().year() + 1
+         prevYear: "Previous",
+         nextYear: "Next"
       },
 
       weekNumbers: false, // shows week count
@@ -23,4 +23,9 @@ $(document).on('turbolinks:load', function() {
       editable: false,
       themeSystem: "bootstrap4"
     });
+
+  addEventListener('turbolinks:before-visit', () => {
+    $('#calendar').fullCalendar('destroy')
+  });
 });
+

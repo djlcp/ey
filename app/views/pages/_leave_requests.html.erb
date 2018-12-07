@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Your Leave Requests</h2>
-        <%= link_to 'New Leave Request', new_request_path, class: "btn btn-light btn-xl js-scroll-trigger" %>
         <hr class="my-4">
       </div>
     </div>
@@ -18,6 +17,7 @@
                 <th>Start</th>
                 <th>End</th>
                 <th>Status</th>
+                <th>Leave Type</th>
                 <th></th>
               </tr>
             </thead>
@@ -27,9 +27,12 @@
                   <td colspan="5">You currently have no leave requests</td>
                 </tr>
               <% else %>
-                <% current_user.requests.kept.each do |request| %>
+                <% current_user.requests.kept.each_with_index do |request, index| %>
                   <tr>
-                    <td><%= request.description %></td>
+                    <td class="js-slide-toggle clickable" data-target=".tableRow<%= index %>">
+                      <i class="fas fa-plus mr-2 js-see-more"></i>
+                      <%= request.description %>
+                    </td>
                     <td><%= request.start %></td>
                     <td><%= request.end %></td>
                     <%- if request.pending? %>
@@ -39,18 +42,28 @@
                       <% else request.declined? %>
                           <td class="table-danger"> Declined </td>
                     <% end %>
+                    <td><%= request.leave_type.humanize %></td>
                     <td style="text-align: center">
                       <% unless request.start <= Time.current %>
-                        <%= link_to 'Delete', request_path(request), method: :delete, data: { confirm: 'Are you sure you want to delete this request?' }, class: 'button button--danger' %>
+                        <%= link_to 'Delete', request_path(request), method: :delete, data: { confirm: 'Are you sure you want to delete this request?' }, class: 'button button--small button--danger' %>
                       <% end %>
                     </td>
                   </tr>
+                  <% request.approval_requests.each do |approval_request| %>
+                    <tr class="hidden tableRow<%= index %>">
+                      <td colspan="3"><span class="mr-3"></span><%= approval_request.approver.full_name %></td>
+                      <td colspan="2"><%= approval_request.approval_status.humanize %></td>
+                    </tr>
+                  <% end %>
                 <% end %>
               <% end %>
             </tbody>
           </table>
       </div>
-       <div class="col-12">
+      <div class="col-lg-12 text-center mb-3">
+        <h6 class="section-heading ">Request more leave - select the type below</h6>
+      </div>
+      <div class="col-12">
          <div class="container">
           <div class="row">
             <%= render 'leave_request',

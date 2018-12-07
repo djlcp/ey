@@ -5,12 +5,14 @@ class ApprovalRequestController < ApplicationController
 
   def approve
     @approval_request.approved!
-    redirect_to root_path, success: 'Request approved'
+    flash[:success] = 'Request approved'
+    redirect_to root_path
   end
 
   def reject
-     @approval_request.rejected!
-    redirect_to root_path, success: 'Request rejected'
+    @approval_request.rejected!
+    flash[:error] = 'Request rejected'
+    redirect_to root_path
   end
 
   private

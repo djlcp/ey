@@ -1,6 +1,5 @@
-
-  <%= render 'manager_leave_requests' if current_user.manager? %>
-  <%= render 'leave_requests' %>
+<%= render 'manager_leave_requests' if current_user.approval_requests.awaiting_review.present? %>
+<%= render 'leave_requests' %>
 
 <section class="bg-primary" id="calendar">
 </section>

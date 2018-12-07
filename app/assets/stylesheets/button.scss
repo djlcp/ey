@@ -19,6 +19,10 @@
     background-color: darken($theme-color, 10%);
     text-decoration: none;
   }
+  &:disabled {
+    background-color: darken($theme-color, 15%);
+    cursor: not-allowed;
+  }
 }
 
 .button--small {
