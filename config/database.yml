@@ -32,11 +32,3 @@ production:
   username: root
   password: L0gitechnicals
   database: projectey
-
-
-development:
-adapter: mysql2
-database: mydb
-host: localhost
-username: root
-password: "mypassword" 
