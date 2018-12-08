@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
   helper :mailer
-  default from: 'richard.smith@uk.ey.com'
+  default from: 'no-reply@eytm.net'
   layout 'mailer'
 end
