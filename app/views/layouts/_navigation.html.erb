@@ -14,9 +14,6 @@
               <%= link_to 'Profile', edit_user_registration_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Calendar', root_path(anchor: 'calendar'), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
             <%= link_to 'Leave Requests', root_path(anchor: 'leave'), class: 'nav-link' %>
           </li>
           <% if current_user.admin? || current_user.hr? %>
