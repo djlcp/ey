@@ -94,4 +94,9 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = { api_token: Rails.application.secrets.postmark_api_token }
+
+  config.action_mailer.default_url_options = {
+    protocol: 'https',
+    host: 'eytm.net'
+  }
 end
