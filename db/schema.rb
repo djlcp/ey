@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_213721) do
+ActiveRecord::Schema.define(version: 2018_12_06_185258) do
 
   create_table "approval_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "request_id"
     t.bigint "approver_id"
     t.string "token"
-    t.boolean "approved", default: false
+    t.boolean "approval_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["approver_id"], name: "index_approval_requests_on_approver_id"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2018_12_05_213721) do
     t.integer "approval", default: 0
     t.bigint "user_id"
     t.integer "leave_type"
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_requests_on_discarded_at"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
