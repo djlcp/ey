@@ -39,6 +39,9 @@
 // SELECTIZE
 //= require init-selectize
 
+// DATATABLES
+//= require init-datatables
+
 // COLLAPSABLE NAVBAR
 //= require collapsable-navbar
 

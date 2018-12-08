@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :manager do
     resources :users
+    resources :requests
   end
 
   resources :approval_requests, only: [:show] do

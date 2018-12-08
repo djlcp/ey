@@ -11,6 +11,17 @@ class Request < ApplicationRecord
     other: 8
   }
 
+  LEAVE_TYPE_COLORS = {
+    annual_leave: '#9B59B6',
+    training: '#2980B9',
+    illness: '#1ABC9C',
+    study_leave: '#27AE60',
+    maternity: '#F1C40F',
+    paternity: '#E67E22',
+    unpaid: '#839192',
+    other: '#2E4053'
+  }
+
   enum approval: %i[pending approved declined]
 
   has_many :approval_requests

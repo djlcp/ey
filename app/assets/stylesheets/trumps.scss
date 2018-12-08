@@ -17,3 +17,14 @@
 .text-warning {
   color: #FFC526;
 }
+
+// JQUERY MODAL STYLES
+.modal {
+  overflow: unset;
+  padding: 30px !important;
+}
+
+// FULL CALENDAR OVERWRITE STYLES
+.fc-event-container {
+  cursor: pointer;
+}

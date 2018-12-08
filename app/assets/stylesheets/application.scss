@@ -19,13 +19,15 @@
 
 @import 'vendor/datepicker';
 
+@import 'variables';
+
 @import 'bootstrap';
 @import 'vendor/scss/bootstrap-overrides';
 @import 'adminpanel';
 @import 'forms';
 @import 'trumps';
+@import 'trumps/datatables';
 
-@import 'variables';
 @import 'base/typography';
 @import 'button';
 @import 'footer';

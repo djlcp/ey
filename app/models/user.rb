@@ -31,7 +31,9 @@ class User < ApplicationRecord
   end
 
   def managed_user_requests
-    Request.kept.where(id: managed_users.map { |user| user.requests.ids }.flatten)
+    Request.kept.where(
+      id: managed_users.map { |user| user.requests.ids }.flatten.push(id)
+    )
   end
 
   def requests_for_approval

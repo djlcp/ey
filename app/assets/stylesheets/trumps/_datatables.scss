@@ -1,0 +1,45 @@
+.paginate_button,
+.dataTables_info {
+  font-size: 0.9rem !important;
+}
+
+.paginate_button.current {
+  font-size: 0.9rem !important;
+  background: $theme-color !important;
+}
+
+table.dataTable thead th {
+  border-bottom: 0 !important;
+}
+table.dataTable tfoot th {
+  border-top: 0 !important;
+}
+
+.dataTables_wrapper {
+  td {
+    padding: 4.8px 18px !important;
+  }
+}
+
+.dt-buttons {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.dt-button {
+  padding: 0.5em 1.4em;
+  font-size: 0.8rem;
+  max-width: 100%;
+  font-weight: bold;
+  line-height: 1.6;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.2s all ease;
+  background-color: #f1d326e8;
+  color: #555;
+  border-radius: 5px;
+  -webkit-font-smoothing: inherit;
+  border: 1px solid #f1d326e8;
+}
