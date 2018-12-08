@@ -27,8 +27,8 @@
                 <tr>
                   <td><%= approval_request.request.user.full_name %></td>
                   <td><%= truncate(approval_request.request.description, length: 15) %></td>
-                  <td><%= approval_request.request.start %></td>
-                  <td><%= approval_request.request.end %></td>
+                  <td><%= approval_request.request.start.strftime("%d/%m/%Y") %></td>
+                  <td><%= approval_request.request.end.strftime("%d/%m/%Y") %></td>
                   <td><%= approval_request.request.leave_type.humanize %></td>
                   <td>
                     <% if current_user.request_overlaps?(approval_request.request) %>

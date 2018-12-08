@@ -27,7 +27,7 @@
 
 <div class="container">
   <h3 class="mt-5 mb-3">Leave Requests</h3>
-  <table class="table table-striped">
+  <table class="table js-datatable table-striped">
     <thead>
       <tr>
         <th>Description</th>
@@ -45,11 +45,11 @@
         <td><%= request.description %></td>
         <td><%= request.start.strftime("%d-%m-%Y") %></td>
         <td><%= request.end.strftime("%d-%m-%Y") %></td>
-        <%- if request.pending? %>
+        <% if request.pending? %>
               <td class="table-warning"> Pending </td>
           <% elsif request.approved? %>
               <td class="table-success"> Approved </td>
-          <% else request.declined? %>
+          <% else %>
               <td class="table-danger"> Declined </td>
         <% end %>
       </tr>
