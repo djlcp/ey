@@ -40,6 +40,7 @@ class Hr::UsersController < ApplicationController
       :email,
       :role,
       :admin,
+      :is_manager,
       :join_date,
       :manager_id,
       :counsellor_id
