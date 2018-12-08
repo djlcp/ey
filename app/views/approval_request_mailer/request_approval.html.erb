@@ -1,5 +1,5 @@
 <%= mailer_paragraph do %>
-  Dear <%= @recipient.full_name %>,
+  Dear <%= @recipient.first_name %>,
 <% end %>
 
 <%= mailer_paragraph do %>
@@ -9,8 +9,25 @@
 <%= mailer_paragraph do %>
   <ul>
     <li>Type of Leave: <%= @request.leave_type.humanize %></li>
-    <li>Duration: <%= @request.start %> to <%= @request.end %></li>
+    <li>Duration:<%= @request.start.strftime("%d/%m/%Y") %> to <%= @request.end.strftime("%d/%m/%Y") %></li>
   </ul>
+<% end %>
+
+<% if @recipient.request_overlaps?(@request) %>
+  <%= mailer_paragraph do %>
+    This request overlaps with the following requests:
+  <% end %>
+
+  <% @recipient.overlapping_requests(@request).each do |request| %>
+    <%= mailer_paragraph do %>
+      <strong><%= request.user.full_name %></strong> <%= request.start.strftime("%d/%m/%Y") %> to <%= request.end.strftime("%d/%m/%Y") %> (<%= request.leave_type.humanize %> - <%= request.approval.humanize %>)
+  <% end %>
+  <% end %>
+
+<% else %>
+  <%= mailer_paragraph do %>
+    This request does not overlap with any other requests from your reports.
+  <% end %>
 <% end %>
 
 <%= mailer_spacer %>
@@ -19,4 +36,4 @@
 
 <%= mailer_divider %>
 
-<%= mailer_error_button('Reject Request', '#', 'center') %>
+<%= mailer_error_button('Reject Request', reject_url(token: @approval_request.token), 'center') %>

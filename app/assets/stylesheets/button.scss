@@ -19,6 +19,10 @@
     background-color: darken($theme-color, 10%);
     text-decoration: none;
   }
+  &:disabled {
+    background-color: darken($theme-color, 15%);
+    cursor: not-allowed;
+  }
 }
 
 .button--small {
@@ -28,6 +32,16 @@
 
 .button--full {
   width: 100%;
+}
+
+.button--info {
+  background: #4D9DE0;
+  border-color: #4D9DE0;
+  color: #fff;
+  &:hover {
+    background-color: darken(#4D9DE0, 10%);
+    color: white;
+  }
 }
 
 .button--danger {

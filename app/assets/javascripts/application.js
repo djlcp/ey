@@ -25,6 +25,10 @@
 // VENDOR JS (FILES COPIED INTO PROJECT)
 //= vendor/scrollreveal
 
+// DATEPICKER
+//= require vendor/datepicker
+//= require init-datepicker
+
 // FULL CALENDAR
 //= require fullcalendar
 //= require init-fullcalendar
@@ -37,3 +41,9 @@
 
 // COLLAPSABLE NAVBAR
 //= require collapsable-navbar
+
+// SLIDE TOGGLE
+//= require init-slidetoggle
+
+// TOOLTIPS
+//= require init-tooltip

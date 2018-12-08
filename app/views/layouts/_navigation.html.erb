@@ -21,7 +21,12 @@
           </li>
           <% if current_user.admin? || current_user.hr? %>
             <li class="nav-item">
-              <%= link_to 'HR Panel', hr_users_path, class: "nav-link js-scroll-trigger" %>
+              <%= link_to 'HR Panel', hr_users_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          <% if current_user.is_manager? %>
+            <li class="nav-item">
+              <%= link_to 'Your Reports', manager_users_path, class: "nav-link" %>
             </li>
           <% end %>
           <li class="nav-item">

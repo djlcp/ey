@@ -1,0 +1,19 @@
+.hidden {
+  display: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.js-see-more {
+  transition: all 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+.text-warning {
+  color: #FFC526;
+}

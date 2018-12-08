@@ -6,15 +6,19 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'hr/users#index'
 
-  get 'accept', to: 'accept#index'
-  get 'accept/:id', to: 'accept#index'
-
+  get 'accept', to: 'accept#approve'
+  get 'reject', to: 'accept#reject'
+  get 'status', to: 'accept#status'
 
   namespace :hr do
   	resources :users
   end
 
-  resources :approval_request, only: [] do
+  namespace :manager do
+    resources :users
+  end
+
+  resources :approval_requests, only: [:show] do
     post :approve
     post :reject
   end

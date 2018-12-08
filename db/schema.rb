@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_185258) do
+ActiveRecord::Schema.define(version: 2018_12_08_120957) do
 
   create_table "approval_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "request_id"
     t.bigint "approver_id"
     t.string "token"
-    t.boolean "approval_status", default: false
+    t.integer "approval_status", default: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["approver_id"], name: "index_approval_requests_on_approver_id"
@@ -74,10 +74,11 @@ ActiveRecord::Schema.define(version: 2018_12_06_185258) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.boolean "admin", default: false
-    t.integer "role", default: 0
+    t.integer "role", default: 1
     t.date "join_date"
     t.integer "counsellor_id"
     t.integer "manager_id"
+    t.boolean "is_manager", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

@@ -11,20 +11,24 @@
 @import 'vendor/scss/opportunities';
 @import 'creative';
 
-@import 'css/magnific-popup';
 @import 'vendor/fullcalendar';
 @import 'login';
 
 @import 'vendor/scss/masthead';
 @import 'vendor/scss/navbar';
 
+@import 'vendor/datepicker';
+
 @import 'bootstrap';
+@import 'vendor/scss/bootstrap-overrides';
 @import 'adminpanel';
 @import 'forms';
+@import 'trumps';
 
 @import 'variables';
 @import 'base/typography';
 @import 'button';
+@import 'footer';
 
 @import 'alerts';
 @import 'containers';

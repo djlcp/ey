@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :destroy]
 
   def index
-    @requests = Request.all
+    @requests = Request.approved
     respond_to do |format|
       format.json { render :index }
     end
@@ -19,12 +19,12 @@ class RequestsController < ApplicationController
     @request = current_user.requests.new(request_params)
     if @request.save
       current_user.send_request_approval_emails(@request)
+      flash[:success] = 'Request successfully created'
       redirect_to root_path
     else
       render :new
     end
   end
-
 
   def show; end
 
