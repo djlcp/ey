@@ -51,10 +51,11 @@ class User < ApplicationRecord
 
   def overlapping_requests(request)
     managed_user_requests.joins(:user).where(
-      'start >= :start_date AND end <= :end_date',
+      '(start between :start_date AND :end_date) OR (end between :start_date AND :end_date)',
       start_date: request.start,
       end_date: request.end
     ).where(
+      approval: Request.approvals.except(:declined).keys,
       users: { manager_id: self.id }
     ).where.not(id: request.id)
   end

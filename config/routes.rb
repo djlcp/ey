@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   	resources :users
   end
 
-  resources :approval_request, only: [] do
+  namespace :manager do
+    resources :users
+  end
+
+  resources :approval_requests, only: [:show] do
     post :approve
     post :reject
   end

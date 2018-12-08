@@ -1,7 +1,9 @@
-class ApprovalRequestController < ApplicationController
+class ApprovalRequestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_approval_request
   before_action :authorize_user
+
+  def show; end
 
   def approve
     @approval_request.approved!
@@ -18,7 +20,15 @@ class ApprovalRequestController < ApplicationController
   private
 
   def set_approval_request
-    @approval_request = ApprovalRequest.find(params[:approval_request_id])
+    @approval_request = ApprovalRequest.find(approval_request_id)
+  end
+
+  def approval_request_id
+    if params[:id]
+      params[:id]
+    else
+      params[:approval_request_id]
+    end
   end
 
   def authorize_user

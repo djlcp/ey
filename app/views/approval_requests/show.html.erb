@@ -1,0 +1,59 @@
+<div class="container" id="kontainer">
+  <h2 class="mb-3">
+    Approval request for <%= @approval_request.request.user.full_name %>
+    <% if current_user.request_overlaps?(@approval_request.request) %>
+      <i class="text-warning fas fa-exclamation-triangle"></i>
+    <% end %>
+  </h2>
+
+   <div class="container mb-3">
+    <div class="row">
+      <%= link_to 'Approve', approval_request_approve_path(@approval_request), method: :post, class: 'button mr-5', data: { confirm: 'Are you sure you want to approve this request?' } %>
+      <%= link_to 'Reject', approval_request_reject_path(@approval_request), method: :post, class: 'button button--danger', data: { confirm: 'Are you sure you want to reject this request?' } %>
+    </div>
+  </div>
+
+  <p>
+    <%= @approval_request.request.start.strftime("%d/%m/%Y") %> to <%= @approval_request.request.end.strftime("%d/%m/%Y") %>
+  </p>
+
+  <p>
+    <%= @approval_request.request.leave_type.humanize %>
+  </p>
+
+  <p>
+    <%= @approval_request.request.description %>
+  </p>
+
+  <% if current_user.request_overlaps?(@approval_request.request) %>
+
+    <p>This request overlaps with the following requests:</p>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Description</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.overlapping_requests(@approval_request.request).order(start: :asc).each do |request| %>
+
+          <tr>
+            <td><%= request.user.full_name %></td>
+            <td><%= request.start.strftime("%d/%m/%Y") %></td>
+            <td><%= request.end.strftime("%d/%m/%Y") %></td>
+            <td><%= request.description %></td>
+            <td><%= request.leave_type.humanize %></td>
+          </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+
+  <% end %>
+
+</div>

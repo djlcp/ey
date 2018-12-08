@@ -27,7 +27,7 @@
                   <td colspan="5">You currently have no leave requests</td>
                 </tr>
               <% else %>
-                <% current_user.requests.kept.each_with_index do |request, index| %>
+                <% current_user.requests.kept.order(start: :asc).each_with_index do |request, index| %>
                   <tr>
                     <td class="js-slide-toggle clickable" data-target=".tableRow<%= index %>">
                       <i class="fas fa-plus mr-2 js-see-more"></i>

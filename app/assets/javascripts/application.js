@@ -44,3 +44,6 @@
 
 // SLIDE TOGGLE
 //= require init-slidetoggle
+
+// TOOLTIPS
+//= require init-tooltip

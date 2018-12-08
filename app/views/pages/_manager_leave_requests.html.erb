@@ -19,19 +19,26 @@
                 <th>End</th>
                 <th>Type</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               <% current_user.approval_requests.awaiting_review.each do |approval_request| %>
                 <tr>
                   <td><%= approval_request.request.user.full_name %></td>
-                  <td><%= approval_request.request.description %></td>
+                  <td><%= truncate(approval_request.request.description, length: 15) %></td>
                   <td><%= approval_request.request.start %></td>
                   <td><%= approval_request.request.end %></td>
                   <td><%= approval_request.request.leave_type.humanize %></td>
-                  <td style="text-align: center">
+                  <td>
+                    <% if current_user.request_overlaps?(approval_request.request) %>
+                      <i data-toggle="tooltip" data-placement="top" title="This request clashes with another" class="text-warning fas fa-exclamation-triangle"></i>
+                    <% end %>
+                  </td>
+                  <td>
                     <%= link_to 'Approve', approval_request_approve_path(approval_request), method: :post, class: 'button button--small', data: { confirm: 'Are you sure you want to approve this request?' } %>
                     <%= link_to 'Reject', approval_request_reject_path(approval_request), method: :post, class: 'button button--danger button--small', data: { confirm: 'Are you sure you want to reject this request?' } %>
+                    <%= link_to 'View details', approval_request_path(approval_request), class: 'button button--info button--small' %>
                   </td>
                 </tr>
               <% end %>
