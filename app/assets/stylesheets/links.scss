@@ -1,0 +1,15 @@
+.link {
+  color: darken($theme-color, 10%);
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+    color: darken($theme-color, 20%);
+  }
+}
+
+.link--danger {
+  color: #dc3545;
+  &:hover {
+    color: darken(#dc3545, 10%);
+  }
+}

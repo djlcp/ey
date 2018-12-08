@@ -4,19 +4,15 @@ $(document).on('turbolinks:load', function() {
       "bLengthChange": false,
     }
 
-    if ($(this).data('buttons') == 'true') {
+    if ($(this).data('show-buttons')) {
       options['dom'] = 'Bfrtip',
       options['buttons'] = [
         {
           extend: 'csv',
-          exportOptions: {
-            columns: [-1]
-          },
+          exportOptions: {},
         }, {
           extend: 'excel',
-          exportOptions: {
-            columns: [-1]
-          }
+          exportOptions: {}
         }
       ]
     }
