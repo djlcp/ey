@@ -91,3 +91,6 @@ gem 'validates_timeliness'
 
 # Soft deleting
 gem 'discard'
+
+# For sending emails
+gem 'postmark-rails'
