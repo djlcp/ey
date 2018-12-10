@@ -26,7 +26,7 @@
 </div>
 
 <div class="container">
-  <h3 class="mt-5 mb-3">Leave Requests</h3>
+  <h3 >Leave Requests</h3>
   <table class="table js-datatable table-striped">
     <thead>
       <tr>
@@ -34,6 +34,9 @@
         <th>Start</th>
         <th>End</th>
         <th>Status</th>
+        <% if current_user.admin? %>
+            <th></th>
+        <% end %>
       </tr>
     </thead>
 
@@ -52,7 +55,13 @@
           <% else %>
               <td class="table-danger"> Declined </td>
         <% end %>
+        <% if current_user.admin? %>
+            <td>
+              <%= link_to 'Delete', request_path(request.id), method: :delete, data: { confirm: 'Are you sure you want to delete this request?' }, class: 'button button--small button--danger' %>
+            </td>
+        <% end %>
       </tr>
+
     <% end %>
     </tbody>
 

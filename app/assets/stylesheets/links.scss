@@ -13,3 +13,10 @@
     color: darken(#dc3545, 10%);
   }
 }
+
+.link-dark {
+  color: #555555;
+  &:hover {
+    color: darken(#555555, 10%);
+  }
+}

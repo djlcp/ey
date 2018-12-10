@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'admin', to: 'hr/users#index'
-
   get 'accept', to: 'accept#approve'
   get 'reject', to: 'accept#reject'
-  get 'status', to: 'accept#status'
+  #delete 'hr/requests/:id', to: 'requests#destroy2', as: :delete_request
 
   namespace :hr do
   	resources :users
