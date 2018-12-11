@@ -13,6 +13,7 @@ class ApprovalRequest < ApplicationRecord
 
   def update_request
     return unless approved? || rejected?
+    return if request.approved? || request.declined?
 
     if approved?
       if request.approval_requests.all? { |approval_request| approval_request.approved? }
