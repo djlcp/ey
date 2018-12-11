@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <div class="container" id="kontainer">
+    <section class="bg-primary" id="calendar" data-target="<%= requests_path(format: :json) %>">
+    </section>
+    <div id="calendar-modal" class="modal"></div>
+  </div>
+<% end %>

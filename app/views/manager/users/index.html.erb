@@ -24,32 +24,6 @@
 
   <hr>
 
-  <h3>Your Reports</h2>
-  <table class="table table-striped js-datatable">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td style="text-align: center">
-          <%= link_to "View User", manager_user_path(user), class: 'button button--small' %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
-  <hr class="divider">
-
   <table class="table js-datatable table-striped" data-show-buttons="true">
     <thead>
       <tr>
@@ -81,6 +55,32 @@
           <td><%= truncate(request.description, length: 17) %></td>
         </tr>
       <% end %>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <h3>Your Reports</h2>
+  <table class="table table-striped js-datatable">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td style="text-align: center">
+          <%= link_to "View User", manager_user_path(user), class: 'button button--small' %>
+        </td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 

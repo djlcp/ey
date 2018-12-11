@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
+  get 'calendar', to: 'pages#calendar'
   get 'admin', to: 'hr/users#index'
   get 'accept', to: 'accept#approve'
   get 'reject', to: 'accept#reject'
-  #delete 'hr/requests/:id', to: 'requests#destroy2', as: :delete_request
+  # delete 'hr/requests/:id', to: 'requests#destroy2', as: :delete_request
 
   namespace :hr do
   	resources :users

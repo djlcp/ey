@@ -1,8 +1,2 @@
 <%= render 'manager_leave_requests' if current_user.approval_requests.awaiting_review.present? %>
 <%= render 'leave_requests' %>
-
-<div class="container">
-  <section class="bg-primary" id="calendar" data-target="<%= requests_path(format: :json) %>">
-  </section>
-  <div id="calendar-modal" class="modal"></div>
-</div>
